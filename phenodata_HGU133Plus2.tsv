@@ -1,0 +1,138 @@
+rownames	title	charc_vec	description	experiment	samples
+GSM1017466	GSM1017466	HACAT_5a	gender: female-|-organ: Skin-|-disease: non-tumorigenic; spontaneously immortilized keratinocytes-|-morphology: epithelial-|-is_metastasis: no-|-metastatic_site: n/a-|-in_vivo_growth: yes-|-cell line: HaCaT-|-atcc_number: n/a (PMID: 2450098)	gene expression profiling of 21 cell lines-|-HaCaT, replicate 1	GSE41445	HaCaT
+GSM1017467	GSM1017467	HACAT_5b	gender: female-|-organ: Skin-|-disease: non-tumorigenic; spontaneously immortilized keratinocytes-|-morphology: epithelial-|-is_metastasis: no-|-metastatic_site: n/a-|-in_vivo_growth: yes-|-cell line: HaCaT-|-atcc_number: n/a (PMID: 2450098)	gene expression profiling of 21 cell lines-|-HaCaT, replicate 2	GSE41445	HaCaT
+GSM1017468	GSM1017468	HACAT_5c	gender: female-|-organ: Skin-|-disease: non-tumorigenic; spontaneously immortilized keratinocytes-|-morphology: epithelial-|-is_metastasis: no-|-metastatic_site: n/a-|-in_vivo_growth: yes-|-cell line: HaCaT-|-atcc_number: n/a (PMID: 2450098)	gene expression profiling of 21 cell lines-|-HaCaT, replicate 3	GSE41445	HaCaT
+GSM1017472	GSM1017472	HELA_7a	gender: female-|-organ: Cervix-|-disease: adenocarcinoma-|-morphology: epithelial-|-is_metastasis: no-|-metastatic_site: n/a-|-in_vivo_growth: not tested-|-cell line: HeLa-|-atcc_number: CCL-2	gene expression profiling of 21 cell lines-|-HeLa, replicate 1	GSE41445	HeLa
+GSM1017473	GSM1017473	HELA_7b	gender: female-|-organ: Cervix-|-disease: adenocarcinoma-|-morphology: epithelial-|-is_metastasis: no-|-metastatic_site: n/a-|-in_vivo_growth: not tested-|-cell line: HeLa-|-atcc_number: CCL-2	gene expression profiling of 21 cell lines-|-HeLa, replicate 2	GSE41445	HeLa
+GSM1017474	GSM1017474	HELA_7c	gender: female-|-organ: Cervix-|-disease: adenocarcinoma-|-morphology: epithelial-|-is_metastasis: no-|-metastatic_site: n/a-|-in_vivo_growth: not tested-|-cell line: HeLa-|-atcc_number: CCL-2	gene expression profiling of 21 cell lines-|-HeLa, replicate 3	GSE41445	HeLa
+GSM1025049	GSM1025049	HeLa control, biological rep1	cell line: cervical cancer (HeLa) cells-|-agent: control	Gene expression data from untreated Hela cells.-|-Cas_Control-1	GSE41827	HeLa
+GSM1025050	GSM1025050	HeLa control, biological rep2	cell line: cervical cancer (HeLa) cells-|-agent: control	Gene expression data from untreated Hela cells.-|-Cas_Control-2	GSE41827	HeLa
+GSM1025051	GSM1025051	HeLa control, biological rep3	cell line: cervical cancer (HeLa) cells-|-agent: control	Gene expression data from untreated Hela cells.-|-Cas_Control-3	GSE41827	HeLa
+GSM1068623	GSM1068623	HeLa cells-control	cell line: HeLa-|-treatment: none-|-gender: female-|-age: 31 years-|-tissue: cervix-|-life span: infinite-|-morphology: epithelial-like	HeLa cells (control)	GSE43701	HeLa
+GSM1122645	GSM1122645	Hela Control siRNA_Normoxia	cell line: HeLa-|-genotype/variation: control-|-oxygen level: normoxia	Hela Co_N-|-imimura_s01_HelaCoN_avg100.txt	GSE46054	HeLa
+GSM1154785	GSM1154785	Untreated native HeLa cells 1	treatment: Untreated	Med = Medium	GSE47685	HeLa
+GSM1154786	GSM1154786	Untreated native HeLa cells 2	treatment: Untreated	Med = Medium	GSE47685	HeLa
+GSM1282397	GSM1282397	HeLa no infection, replicate 1	cell line: HeLa-|-infection: no infection-|-	HeLa no infection, replicate 1	GSE53103	HeLa
+GSM1282398	GSM1282398	HeLa no infection, replicate 2	cell line: HeLa-|-infection: no infection-|-		GSE53103	HeLa
+GSM1282399	GSM1282399	HeLa no infection, replicate 3	cell line: HeLa-|-infection: no infection-|-		GSE53103	HeLa
+GSM135229	GSM135229	Cervical Cancer Patient 10, Biopsy 6	FIGO: 2B-|-Histology: SCC-|-Grade: MD-|-hp5: 57.5-|-HGB: 129-|-ifp: 13.875-|-age: 30.52-|-tumsizeMR: 7-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135230	GSM135230	Cervical Cancer Patient 10, Biopsy 3	FIGO: 2B-|-Histology: SCC-|-Grade: MD-|-hp5: 57.5-|-HGB: 129-|-ifp: 13.875-|-age: 30.52-|-tumsizeMR: 7-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135231	GSM135231	Cervical Cancer Patient 6, Biopsy 2	FIGO: 2B-|-Histology: SCC-|-Grade: PD-|-hp5: 65.3-|-HGB: 140-|-ifp: 9.88-|-age: 62.79-|-tumsizeMR: 4-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135232	GSM135232	Cervical Cancer Patient 4, Biopsy 2	FIGO: 1B-|-Histology: SCC-|-Grade: MD-|-hp5: 36.7-|-HGB: 138-|-ifp: 11.94-|-age: 37.36-|-tumsizeMR: 4.3-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135233	GSM135233	Cervical Cancer Patient 1, Biopsy 3	FIGO: 1B-|-Histology: SCC-|-Grade: MD-|-hp5: 66.3-|-HGB: 126-|-ifp: 27.02-|-age: 46.52-|-tumsizeMR: 5-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135234	GSM135234	Cervical Cancer Patient 1, Biopsy 6	FIGO: 1B-|-Histology: SCC-|-Grade: MD-|-hp5: 66.3-|-HGB: 126-|-ifp: 27.02-|-age: 46.52-|-tumsizeMR: 5-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135235	GSM135235	Cervical Cancer Patient 4, Biopsy 1	FIGO: 1B-|-Histology: SCC-|-Grade: MD-|-hp5: 36.7-|-HGB: 138-|-ifp: 11.94-|-age: 37.36-|-tumsizeMR: 4.3-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135236	GSM135236	Cervical Cancer Patient 4, Biopsy 3	FIGO: 1B-|-Histology: SCC-|-Grade: MD-|-hp5: 36.7-|-HGB: 138-|-ifp: 11.94-|-age: 37.36-|-tumsizeMR: 4.3-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135237	GSM135237	Cervical Cancer Patient 12, Biopsy 1	FIGO: 3B-|-Histology: SCC-|-Grade: MD-|-hp5: 22.1-|-HGB: 105-|-ifp: 33.08-|-age: 46.83-|-tumsizeMR: 8.5-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135238	GSM135238	Cervical Cancer Patient 12, Biopsy 4	FIGO: 3B-|-Histology: SCC-|-Grade: MD-|-hp5: 22.1-|-HGB: 105-|-ifp: 33.08-|-age: 46.83-|-tumsizeMR: 8.5-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135239	GSM135239	Cervical Cancer Patient 12, Biopsy 5	FIGO: 3B-|-Histology: SCC-|-Grade: MD-|-hp5: 22.1-|-HGB: 105-|-ifp: 33.08-|-age: 46.83-|-tumsizeMR: 8.5-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135240	GSM135240	Cervical Cancer Patient 15, Biopsy 2	FIGO: 2B-|-Histology: SCC-|-Grade: MD-|-hp5: 70.7-|-HGB: 157-|-ifp: 4.233333333-|-age: 69.57-|-tumsizeMR: 6.2-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135241	GSM135241	Cervical Cancer Patient 16, Biopsy 1	FIGO: 3B-|-Histology: SCC-|-Grade: WD-|-hp5: 25-|-HGB: 112-|-ifp: 13.325-|-age: 60.9-|-tumsizeMR: 10.5-|-ResponseToTherapy: NR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135242	GSM135242	Cervical Cancer Patient 6, Biopsy 1	FIGO: 2B-|-Histology: SCC-|-Grade: PD-|-hp5: 65.3-|-HGB: 140-|-ifp: 9.88-|-age: 62.79-|-tumsizeMR: 4-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135243	GSM135243	Cervical Cancer Patient 6, Biopsy 4	FIGO: 2B-|-Histology: SCC-|-Grade: PD-|-hp5: 65.3-|-HGB: 140-|-ifp: 9.88-|-age: 62.79-|-tumsizeMR: 4-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135244	GSM135244	Cervical Cancer Patient 7, Biopsy 1	FIGO: 3B-|-Histology: ASC-|-Grade: MD-|-hp5: 79.2-|-HGB: 129-|-ifp: 40.96-|-age: 30.89-|-tumsizeMR: 6-|-ResponseToTherapy: PR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-ACC
+GSM135245	GSM135245	Cervical Cancer Patient 10, Biopsy 2	FIGO: 2B-|-Histology: SCC-|-Grade: MD-|-hp5: 57.5-|-HGB: 129-|-ifp: 13.875-|-age: 30.52-|-tumsizeMR: 7-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135246	GSM135246	Cervical Cancer Patient 10, Biopsy 7	FIGO: 2B-|-Histology: SCC-|-Grade: MD-|-hp5: 57.5-|-HGB: 129-|-ifp: 13.875-|-age: 30.52-|-tumsizeMR: 7-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135247	GSM135247	Cervical Cancer Patient 11, Biopsy 6	FIGO: 4B-|-Histology: SCC-|-Grade: PD-|-hp5: 62.9-|-HGB: 113-|-ifp: 21.34-|-age: 51.42-|-tumsizeMR: 8.6-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135248	GSM135248	Cervical Cancer Patient 15, Biopsy 3	FIGO: 2B-|-Histology: SCC-|-Grade: MD-|-hp5: 70.7-|-HGB: 157-|-ifp: 4.233333333-|-age: 69.57-|-tumsizeMR: 6.2-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135249	GSM135249	Cervical Cancer Patient 16, Biopsy 2	FIGO: 3B-|-Histology: SCC-|-Grade: WD-|-hp5: 25-|-HGB: 112-|-ifp: 13.325-|-age: 60.9-|-tumsizeMR: 10.5-|-ResponseToTherapy: NR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135250	GSM135250	Cervical Cancer Patient 11, Biopsy 7	FIGO: 4B-|-Histology: SCC-|-Grade: PD-|-hp5: 62.9-|-HGB: 113-|-ifp: 21.34-|-age: 51.42-|-tumsizeMR: 8.6-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135251	GSM135251	Cervical Cancer Patient 6, Biopsy 5	FIGO: 2B-|-Histology: SCC-|-Grade: PD-|-hp5: 65.3-|-HGB: 140-|-ifp: 9.88-|-age: 62.79-|-tumsizeMR: 4-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135252	GSM135252	Cervical Cancer Patient 6, Biopsy 3	FIGO: 2B-|-Histology: SCC-|-Grade: PD-|-hp5: 65.3-|-HGB: 140-|-ifp: 9.88-|-age: 62.79-|-tumsizeMR: 4-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135253	GSM135253	Cervical Cancer Patient 15, Biopsy 4	FIGO: 2B-|-Histology: SCC-|-Grade: MD-|-hp5: 70.7-|-HGB: 157-|-ifp: 4.233333333-|-age: 69.57-|-tumsizeMR: 6.2-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135254	GSM135254	Cervical Cancer Patient 9, Biopsy 2	FIGO: 3B-|-Histology: SCC-|-Grade: MD-|-hp5: 64.6-|-HGB: 133-|-ifp: 27.21666667-|-age: 41.53-|-tumsizeMR: 6-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135255	GSM135255	Cervical Cancer Patient 9, Biopsy 3	FIGO: 3B-|-Histology: SCC-|-Grade: MD-|-hp5: 64.6-|-HGB: 133-|-ifp: 27.21666667-|-age: 41.53-|-tumsizeMR: 6-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135256	GSM135256	Cervical Cancer Patient 13, Biopsy 5	FIGO: 2B-|-Histology: ASC-|-Grade: MD-|-hp5: 90.4-|-HGB: 127-|-ifp: 10.22-|-age: 35.13-|-tumsizeMR: 2.9-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-ACC
+GSM135257	GSM135257	Cervical Cancer Patient 13, Biopsy 3	FIGO: 2B-|-Histology: ASC-|-Grade: MD-|-hp5: 90.4-|-HGB: 127-|-ifp: 10.22-|-age: 35.13-|-tumsizeMR: 2.9-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-ACC
+GSM135258	GSM135258	Cervical Cancer Patient 10, Biopsy 5	FIGO: 2B-|-Histology: SCC-|-Grade: MD-|-hp5: 57.5-|-HGB: 129-|-ifp: 13.875-|-age: 30.52-|-tumsizeMR: 7-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135259	GSM135259	Cervical Cancer Patient 7, Biopsy 4	FIGO: 3B-|-Histology: ASC-|-Grade: MD-|-hp5: 79.2-|-HGB: 129-|-ifp: 40.96-|-age: 30.89-|-tumsizeMR: 6-|-ResponseToTherapy: PR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-ACC
+GSM135260	GSM135260	Cervical Cancer Patient 1, Biopsy 4	FIGO: 1B-|-Histology: SCC-|-Grade: MD-|-hp5: 66.3-|-HGB: 126-|-ifp: 27.02-|-age: 46.52-|-tumsizeMR: 5-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM135261	GSM135261	Cervical Cancer Patient 9, Biopsy 5	FIGO: 3B-|-Histology: SCC-|-Grade: MD-|-hp5: 64.6-|-HGB: 133-|-ifp: 27.21666667-|-age: 41.53-|-tumsizeMR: 6-|-ResponseToTherapy: CR	Gene expression data from cervical cancer patients	GSE5787	CervixCancer-SCC
+GSM1357014	GSM1357014	HeLa cells not  infected time 2 rep1	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 2	Gene expression data from_HeLa cells not  infected time 2 rep1	GSE56168	HeLa
+GSM1357015	GSM1357015	HeLa cells not  infected time 2 rep2	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 2	Gene expression data from_HeLa cells not  infected time 2 rep2	GSE56168	HeLa
+GSM1357016	GSM1357016	HeLa cells not  infected time 2 rep3	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 2	Gene expression data from_HeLa cells not  infected time 2 rep3	GSE56168	HeLa
+GSM1357017	GSM1357017	HeLa cells not  infected time 4 rep1	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 4	Gene expression data from_HeLa cells not  infected time 4 rep1	GSE56168	HeLa
+GSM1357018	GSM1357018	HeLa cells not  infected time 4 rep2	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 4	Gene expression data from_HeLa cells not  infected time 4 rep2	GSE56168	HeLa
+GSM1357019	GSM1357019	HeLa cells not  infected time 4 rep3	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 4	Gene expression data from_HeLa cells not  infected time 4 rep3	GSE56168	HeLa
+GSM1357020	GSM1357020	HeLa cells not  infected time 24 rep1	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 24	Gene expression data from_HeLa cells not  infected time 24 rep1	GSE56168	HeLa
+GSM1357021	GSM1357021	HeLa cells not  infected time 24 rep2	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 24	Gene expression data from_HeLa cells not  infected time 24 rep2	GSE56168	HeLa
+GSM1357022	GSM1357022	HeLa cells not  infected time 24 rep3	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 24	Gene expression data from_HeLa cells not  infected time 24 rep3	GSE56168	HeLa
+GSM1357023	GSM1357023	HeLa cells not  infected time 48 rep1	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 48	Gene expression data from_HeLa cells not  infected time 48 rep1	GSE56168	HeLa
+GSM1357024	GSM1357024	HeLa cells not  infected time 48 rep2	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 48	Gene expression data from_HeLa cells not  infected time 48 rep2	GSE56168	HeLa
+GSM1357025	GSM1357025	HeLa cells not  infected time 48 rep3	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 48	Gene expression data from_HeLa cells not  infected time 48 rep3	GSE56168	HeLa
+GSM1357026	GSM1357026	HeLa cells not  infected time 72 rep1	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 72	Gene expression data from_HeLa cells not  infected time 72 rep1	GSE56168	HeLa
+GSM1357027	GSM1357027	HeLa cells not  infected time 72 rep2	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 72	Gene expression data from_HeLa cells not  infected time 72 rep2	GSE56168	HeLa
+GSM1357028	GSM1357028	HeLa cells not  infected time 72 rep3	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 72	Gene expression data from_HeLa cells not  infected time 72 rep3	GSE56168	HeLa
+GSM1357029	GSM1357029	HeLa cells not  infected time 0.5 rep1	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 0.5	Gene expression data from_HeLa cells not  infected time 0.05 rep1	GSE56168	HeLa
+GSM1357030	GSM1357030	HeLa cells not  infected time 0.5 rep2	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 0.5	Gene expression data from_HeLa cells not  infected time 0.05 rep2	GSE56168	HeLa
+GSM1357031	GSM1357031	HeLa cells not  infected time 0.5 rep3	sample type: HeLa 229 cells not infected-|-cell line: HeLa 229-|-infection: none-|-time (hours): 0.5	Gene expression data from_HeLa cells not  infected time 0.05 rep3	GSE56168	HeLa
+GSM155645	GSM155645	CC010	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 35-|-Tumor Stage: II	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155646	GSM155646	CC028	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 27-|-Tumor Stage: IB2	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155647	GSM155647	CC029	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 40-|-Tumor Stage: IB	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155648	GSM155648	CC034A	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 42-|-Tumor Stage: IB	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155649	GSM155649	CC034B	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 44-|-Tumor Stage: II/III	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155650	GSM155650	CC068	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 41-|-Tumor Stage: IB	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155651	GSM155651	CC205	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 57-|-Tumor Stage: IB	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155652	GSM155652	CC225	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 44-|-Tumor Stage: IV	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155653	GSM155653	CC233	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 44-|-Tumor Stage: IB	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155654	GSM155654	CC237	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 25-|-Tumor Stage: IB	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155655	GSM155655	CC243	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 30-|-Tumor Stage: IB2	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155656	GSM155656	CC300	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 47-|-Tumor Stage: IB2	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155657	GSM155657	CC304	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 63-|-Tumor Stage: IB	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155658	GSM155658	CC437	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 38-|-Tumor Stage: IB	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155659	GSM155659	CC507	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 52-|-Tumor Stage: IIIB	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155660	GSM155660	CC515	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 38-|-Tumor Stage: IB2	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155661	GSM155661	CC519	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 48-|-Tumor Stage: IB2	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155662	GSM155662	CC553	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 53-|-Tumor Stage: IB	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155663	GSM155663	CC600	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 55-|-Tumor Stage: IB1	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155664	GSM155664	CC701	Case: Cervical cancer-|-Anatomical sites: Cervix-|-gender: Female-|-age: 26-|-Tumor Stage: IB2	Head and neck cancer	GSE6791	CervixCancer-SCC
+GSM155665	GSM155665	CN001	Case: Cervical normal-|-Anatomical sites: Cervix-|-gender: Female-|-age: 35-|-Tumor Stage: -	Head and neck cancer	GSE6791	NormCervix
+GSM155666	GSM155666	CN018	Case: Cervical normal-|-Anatomical sites: Cervix-|-gender: Female-|-age: 44-|-Tumor Stage: -	Head and neck cancer	GSE6791	NormCervix
+GSM155667	GSM155667	CN022	Case: Cervical normal-|-Anatomical sites: Cervix-|-gender: Female-|-age: 45-|-Tumor Stage: -	Head and neck cancer	GSE6791	NormCervix
+GSM155668	GSM155668	CN206	Case: Cervical normal-|-Anatomical sites: Cervix-|-gender: Female-|-age: 66-|-Tumor Stage: -	Head and neck cancer	GSE6791	NormCervix
+GSM155669	GSM155669	CN243	Case: Cervical normal-|-Anatomical sites: Cervix-|-gender: Female-|-age: 43-|-Tumor Stage: -	Head and neck cancer	GSE6791	NormCervix
+GSM155670	GSM155670	CN407	Case: Cervical normal-|-Anatomical sites: Cervix-|-gender: Female-|-age: 56-|-Tumor Stage: -	Head and neck cancer	GSE6791	NormCervix
+GSM155671	GSM155671	CN530	Case: Cervical normal-|-Anatomical sites: Cervix-|-gender: Female-|-age: 48-|-Tumor Stage: -	Head and neck cancer	GSE6791	NormCervix
+GSM155672	GSM155672	CN543	Case: Cervical normal-|-Anatomical sites: Cervix-|-gender: Female-|-age: 43-|-Tumor Stage: -	Head and neck cancer	GSE6791	NormCervix
+GSM157868	GSM157868	HeLa Transcriptome maps 	cervix carcinoma cells	Data accompanying the paper: \The 3D structure of human interphase-|-chromosomes is related to the transcriptome map. Goetze et al.,-|-(submitted). 	GSE6890	HeLa
+GSM162953	GSM162953	HeLa_uninfected_rep1	HeLa cell line	control sample	GSE7047	HeLa
+GSM162955	GSM162955	HeLa_uninfected_rep2	HeLa cell line	control sample	GSE7047	HeLa
+GSM162964	GSM162964	HeLa_uninfected_rep3	HeLa cell line	control sample	GSE7047	HeLa
+GSM173532	GSM173532	Untreated PRB11895 (HGU133P)	Untreated	Untreated	GSE7216	keratinocytes
+GSM173533	GSM173533	Untreated PRB11896 (HGU133P)	Untreated	Untreated	GSE7216	keratinocytes
+GSM173534	GSM173534	Untreated PRB11897 (HGU133P)	Untreated	Untreated	GSE7216	keratinocytes
+GSM341386	GSM341386	HeLa cell_normal growth condition_18h	cancer cell line-|-HeLa epithelial carcinoma cell	HeLa cell_normal growth condition_18h	GSE13548	HeLa
+GSM341387	GSM341387	HeLa cell_normal growth condition_15h	cancer cell line-|-HeLa epithelial carcinoma cell	HeLa cell_normal growth condition_15h	GSE13548	HeLa
+GSM341388	GSM341388	HeLa cell_normal growth condition_1μM VST_18h	cancer cell line-|-HeLa epithelial carcinoma cell	HeLa cell_normal growth condition_1μM VST_18h	GSE13548	HeLa
+GSM494403	GSM494403	HeLa	cell line: HeLa-|-hsf1: wild-type	Cells cultured under normal growth conditions.-|-HeLa-|--|-	GSE19797	HeLa
+GSM508815	GSM508815	HaCaT_unstimulated_1	cell type: HaCaT-|-tissue: cell line from epidermal keratinocyte	HaCaT cells, unstimulated	GSE20297	HaCaT
+GSM508816	GSM508816	HaCaT_unstimulated_2	cell type: HaCaT-|-tissue: cell line from epidermal keratinocyte	HaCaT cells, unstimulated	GSE20297	HaCaT
+GSM508817	GSM508817	HaCaT_unstimulated_3	cell type: HaCaT-|-tissue: cell line from epidermal keratinocyte	HaCaT cells, unstimulated	GSE20297	HaCaT
+GSM542389	GSM542389	HeLa cells unstimulated	cell type: HeLa-|-agent: none-|-time point: 0h	Gene expression data from unstimulated monocyte-derived dendritic cells	GSE21760	HeLa
+GSM569319	GSM569319	HeLa control knock down 1	treatment: control esiRNA-|-cell line: HeLa	none	GSE23103	HeLa
+GSM569320	GSM569320	HeLa control knock down 2	treatment: control esiRNA-|-cell line: HeLa	none	GSE23103	HeLa
+GSM569321	GSM569321	HeLa control knock down 3	treatment: control esiRNA-|-cell line: HeLa	none	GSE23103	HeLa
+GSM816797	GSM816797	HaCaTnone_serum_none_0hr_rep1	cell line: HaCaT-|-forced expression: none-|-media: serum-|-media stimulation: none-|-treatment: none-|-treatment time: N/A-|-batch: 1998-06-13	Gene expression data	GSE32975	HaCaT
+GSM816802	GSM816802	HaCaTnone_serum_none_0hr_rep2	cell line: HaCaT-|-forced expression: none-|-media: serum-|-media stimulation: none-|-treatment: none-|-treatment time: N/A-|-batch: 1998-06-13	Gene expression data	GSE32975	HaCaT
+GSM816807	GSM816807	HaCaTnone_serum_none_0hr_rep3	cell line: HaCaT-|-forced expression: none-|-media: serum-|-media stimulation: none-|-treatment: none-|-treatment time: N/A-|-batch: 1998-06-13	Gene expression data	GSE32975	HaCaT
+GSM818832	GSM818832	HeLa cells cultured with FBS 1	cell type: HeLa	Gene expression data from HeLa cells cultured with FBS	GSE33050	HeLa
+GSM818833	GSM818833	HeLa cells cultured with FBS 2	cell type: HeLa	Gene expression data from HeLa cells cultured with FBS	GSE33050	HeLa
+GSM818834	GSM818834	HeLa cells cultured with FBS 3	cell type: HeLa	Gene expression data from HeLa cells cultured with FBS	GSE33050	HeLa
+GSM886421	GSM886421	Keratinocytes_untreated_subject1	tissue: primary keratinocytes-|-treatment: untreated control	primary human keratinocytes	GSE36287	keratinocytes
+GSM886422	GSM886422	Keratinocytes_untreated_subject2	tissue: primary keratinocytes-|-treatment: untreated control	primary human keratinocytes	GSE36287	keratinocytes
+GSM886423	GSM886423	Keratinocytes_untreated_subject3	tissue: primary keratinocytes-|-treatment: untreated control	primary human keratinocytes	GSE36287	keratinocytes
+GSM886433	GSM886433	Keratinocytes_untreated_replicate1	tissue: primary keratinocytes-|-treatment: untreated control	primary human keratinocytes	GSE36287	keratinocytes
+GSM886434	GSM886434	Keratinocytes_untreated_replicate2	tissue: primary keratinocytes-|-treatment: untreated control	primary human keratinocytes	GSE36287	keratinocytes
+GSM886435	GSM886435	Keratinocytes_untreated_replicate3	tissue: primary keratinocytes-|-treatment: untreated control	primary human keratinocytes	GSE36287	keratinocytes
+GSM930228	GSM930228	parental HeLa cells rep 1	cell line: HeLa-|-cell type: human Cervical Carcinoma-|-genotype/variation: parental	Gene expression profile of parental HeLa cells	GSE37935	HeLa
+GSM930229	GSM930229	parental HeLa cells rep 2	cell line: HeLa-|-cell type: human Cervical Carcinoma-|-genotype/variation: parental	Gene expression profile of parental HeLa cells	GSE37935	HeLa
+GSM930230	GSM930230	parental HeLa cells rep 3	cell line: HeLa-|-cell type: human Cervical Carcinoma-|-genotype/variation: parental	Gene expression profile of parental HeLa cells	GSE37935	HeLa
+GSM960275	GSM960275	1-HeLa control a	organ: cervix-|-disease: adenocarcinoma-|-cell type: epithelial-|-cell line: HeLa	---	GSE39293	HeLa
+GSM960278	GSM960278	10-HaCaT control a	tissue: skin-|-cell type: keratinocyte-|-description: in vitro spontaneously transformed-|-cell line: HaCaT	---	GSE39293	HaCaT
+GSM960281	GSM960281	19-PHK control a	cell type: primary human keratinocytes-|-tissue: neonatal foreskin-|--|-	---	GSE39293	keratinocytes
+GSM960283	GSM960283	2-HeLa control b	organ: cervix-|-disease: adenocarcinoma-|-cell type: epithelial-|-cell line: HeLa	---	GSE39293	HeLa
+GSM960286	GSM960286	11-HaCaT control b	tissue: skin-|-cell type: keratinocyte-|-description: in vitro spontaneously transformed-|-cell line: HaCaT	---	GSE39293	HaCaT
+GSM960289	GSM960289	20-PHK control b	cell type: primary human keratinocytes-|-tissue: neonatal foreskin-|--|-	---	GSE39293	keratinocytes
+GSM960291	GSM960291	3-HeLa control c	organ: cervix-|-disease: adenocarcinoma-|-cell type: epithelial-|-cell line: HeLa	---	GSE39293	HeLa
+GSM960294	GSM960294	12-HaCaT control c	tissue: skin-|-cell type: keratinocyte-|-description: in vitro spontaneously transformed-|-cell line: HaCaT	---	GSE39293	HaCaT
+GSM960297	GSM960297	21-PHK control c	cell type: primary human keratinocytes-|-tissue: neonatal foreskin-|--|-	---	GSE39293	keratinocytes

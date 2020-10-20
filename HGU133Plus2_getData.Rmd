@@ -1,0 +1,383 @@
+---
+title: "R Notebook"
+output:
+  html_document: default
+  html_notebook: default
+  pdf_document: default
+---
+
+
+## An&aacute;lisis de datos de Affymetrix HGU133A-Plus2 ##
+
+### &Iacute;ndice de contenido###
+1. [Sample Description](#samples) 
+2. [Technology description](#technology) 
+3. [Sample selection ](#selection) 
+
+**Abstract:** <br>
+This file contains all the information required for the microarray analisis of the data in the article ____ and can be used to analize other kind of data but is focused in Affymetrix HGU133APlus2 Microarrays. <br><br>
+**Author:** <br>Felipe de Jes&uacute;s Mu&ntilde;oz Gonz&aacute;lez <br>
+Instituto Nacional de Medicina Genomica (INMEGEN) <br>
+M&eacute;xico City, January 2016.<br>
+
+####  <a name="samples">Sample Description</a> ####
+
+   - <b>HeLa:</b> Epitelial Cervical Cancer inmortalized cell line of Homo sapiens
+   - <b>HaCaT:</b> HaCaT is a spontaneously transformed aneuploid immortal keratinocyte cell line from adult human skin
+   - <b>Keratinocitos: </b> predominant cell type in the epidermis, the outermost layer of the skin, constituting 90% of the cells found there.
+   - <b>Normal Biopsys:</b> Biopsys of patients whitout cervical cancer
+   - <b>Cervical Cancer Biopsys:</b> Biopsys of patients whith cervical cancer
+
+#### <a name="technology">Technology Description</a> ###
+
+**GeneChip&reg; Human Genome U133 Plus 2.0 Array**
+
+First and most comprehensive whole human genome expression array
+ - Convenient one-array view.
+ - Complete coverage of the Human Genome U133 Set plus 6,500 additional genes for analysis of over 47,000 transcripts.
+ - Use the Power of the Probe Set and get multiple independent measurements for each transcript that  - deliver the greatest accuracy and reproducibility of any microarray platform.
+ - GeneChip&reg; System: Richer data, sharper insights, better decisions
+
+**Array Profile**<br>
+All probe sets represented on the GeneChip&reg; Human Genome U133 Set are identically replicated on the GeneChip&reg; Human Genome U133 Plus 2.0 Array. The sequences from which these probe sets were derived were selected from GenBank&reg;, dbEST, and RefSeq. The sequence clusters were created from the UniGene database (Build 133, April 20, 2001) and then refined by analysis and comparison with a number of other publicly available databases, including the Washington University EST trace repository and the University of California, Santa Cruz Golden-Path human genome database (April 2001 release).
+In addition, there are 9,921 new probe sets representing approximately 6,500 new genes. These gene sequences were selected from GenBank, dbEST, and RefSeq. Sequence clusters were created from the UniGene database (Build 159, January 25, 2003) and refined by analysis and comparison with a number of other publicly available databases, including the Washington University EST trace repository and the NCBI human genome assembly (Build 31).
+ 
+For research use only. Not for use in diagnostic procedures.
+ 
+
+#### <a name="selection">Sample Selection</a>###
+
+We used the Gene Expression Omnibus database (GEO) where we selected all the experiments of the HGU133APlus2 microarray technology that contains one or more of this categories:
+
+ - Normal Cervix Biopsis 
+ - Cervical Cancer Biopsis 
+ - Cervical cancer cell lines
+ - Normal epitelial cell lines
+
+Using this, we get this GSE ids
+
+ |                               ID                                        | PUBMEDID | Total Samples |
+ | ---------------------------------------------------------------------- | -------- |  -------------|
+ | [GSE13548](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE13548) | [19435925](http://www.ncbi.nlm.nih.gov/pubmed/19435925) | 42 |
+ | [GSE19797](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19797) | NA | 4 |
+ | [GSE20297](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE20297) | NA | 12 |
+ | [GSE21760](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE21760) | NA | 4 |
+ | [GSE22259](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22259) | [16086846](http://www.ncbi.nlm.nih.gov/pubmed/16086846) | 6 |
+ | [GSE23103](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE23103) | [17020965](http://www.ncbi.nlm.nih.gov/pubmed/17020965) | 6 |
+ | [GSE26471](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE26471) | [17137510](http://www.ncbi.nlm.nih.gov/pubmed/17137510) | 1 |
+ | [GSE2735](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE2735)   | [17137510](http://www.ncbi.nlm.nih.gov/pubmed/17137510) | 18 |
+ | [GSE27678](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE27678) | [17277128](http://www.ncbi.nlm.nih.gov/pubmed/17277128) | 77 |
+ | [GSE32975](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE32975) | [17420274](http://www.ncbi.nlm.nih.gov/pubmed/17420274) | 58 |
+ | [GSE33050](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE33050) | [17510386](http://www.ncbi.nlm.nih.gov/pubmed/17510386) | 9 |
+ | [GSE36287](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE36287) | [17516585](http://www.ncbi.nlm.nih.gov/pubmed/17516585), [21952923](http://www.ncbi.nlm.nih.gov/pubmed/21952923), [23765377](http://www.ncbi.nlm.nih.gov/pubmed/23765377) | 24 |
+ | [GSE37935](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE37935) | [18058129](http://www.ncbi.nlm.nih.gov/pubmed/18058129) | 6 |
+ | [GSE39293](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE39293) | [19955211](http://www.ncbi.nlm.nih.gov/pubmed/19955211) | 24 |
+ | [GSE41445](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE41445) | [20103632](http://www.ncbi.nlm.nih.gov/pubmed/20103632) | 63 |
+ | [GSE41827](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE41827) | [20723761](http://www.ncbi.nlm.nih.gov/pubmed/20723761) | 6 |
+ | [GSE43701](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE43701) | [20834230](http://www.ncbi.nlm.nih.gov/pubmed/20834230) | 4 |
+ | [GSE46054](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE46054) | [22121020](http://www.ncbi.nlm.nih.gov/pubmed/22121020) | 6 |
+ | [GSE47685](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE47685) | [22479649](http://www.ncbi.nlm.nih.gov/pubmed/22479649) | 6 |
+ | [GSE53103](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE53103) | [22549044](http://www.ncbi.nlm.nih.gov/pubmed/22549044) | 60 |
+ | [GSE56168](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE56168) | [23018034](http://www.ncbi.nlm.nih.gov/pubmed/23018034) | 66 |
+ | [GSE5787](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE5787)   | [23382936](http://www.ncbi.nlm.nih.gov/pubmed/23382936) | 33 |
+ | [GSE6021](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE6021)   | [23602831](http://www.ncbi.nlm.nih.gov/pubmed/23602831) | 4 |
+ | [GSE6022](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE6022)   | [23632739](http://www.ncbi.nlm.nih.gov/pubmed/23632739) | 6 |
+ | [GSE6791](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE6791)   | [23702334](http://www.ncbi.nlm.nih.gov/pubmed/23702334) | 84 |
+ | [GSE6890](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE6890)   | [24042169](http://www.ncbi.nlm.nih.gov/pubmed/24042169) | 5 |
+ | [GSE7047](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE7047)   | [25404022](http://www.ncbi.nlm.nih.gov/pubmed/25404022) | 7 |
+ | [GSE7216](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE7216)   | [25959814](http://www.ncbi.nlm.nih.gov/pubmed/25959814) | 25 |
+ | [GSE18674](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18674)   | [23147226](http://www.ncbi.nlm.nih.gov/pubmed/23147226) | 24 |
+ 
+ Load libraries
+```{r, message=FALSE}
+
+# Get data from NCBI Gene Expression Omnibus (GEO)
+
+if(!require(GEOquery)){
+  source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOquery'))
+}
+
+suppressMessages(library(GEOquery, quietly = TRUE))
+
+# Provides high level functions for reading Affy .CEL files, phenotypic data
+if(!require(simpleaffy)){
+    source('http://bioconductor.org/biocLite.R'); biocLite(c('simpleaffy'))
+}
+suppressMessages(library(simpleaffy, quietly = TRUE))
+```
+
+
+We create a directory
+
+```{r, message=FALSE}
+dir.create("Data", showWarnings = FALSE); #THIS NAME IS IMPOSED BY THE TECHNOLOGY
+```
+ 
+ List the samples to download
+ 
+```{r}
+
+gse_ids<-sort(c("GSE13548","GSE18490", "GSE19797", "GSE20297", "GSE21760", "GSE22259", "GSE23103", "GSE26471", "GSE2735", "GSE27678", "GSE32975", "GSE33050", "GSE36287", "GSE37935", "GSE39293", "GSE41445", "GSE41827", "GSE43701", "GSE46054", "GSE47685", "GSE53103", "GSE56168", "GSE5787", "GSE6021", "GSE6022", "GSE6791", "GSE6890", "GSE7047", "GSE7216"));
+
+
+```
+
+Download the samples
+
+```{r, message=FALSE}
+#GET THE MATRIX SERIES FILES
+
+getGEO2<-function(x){
+   g<-invisible(getGEO(x,GSEMatrix=TRUE, destdir="Data",  AnnotGPL=FALSE , getGPL=FALSE ))
+	return(g)
+}
+
+# We will use the created function to get the GEO files for each of the gse_ids
+gse<-lapply(gse_ids, "getGEO2")
+```
+
+
+Remove unused samples and read to an R variable 
+
+```{r, message=FALSE}
+
+# Remove the series matrix files of other technologies, in this case  HGU133APlus2 = GLP570
+list<-list.files(path="Data",pattern="series_matrix.txt.gz");
+#remove other technology microararys
+list<-list[intersect(grep("GSE.+-GPL",list,perl=TRUE),grep("GLP570",list,perl=TRUE,invert=TRUE))]
+file.remove(paste("Data",list,sep="/"))
+
+# Now we extract the files
+list<-paste("Data",list.files(path="Data", pattern="series_matrix.txt.gz"),sep="/")
+lapply(list, gunzip);
+
+list<-paste("Data",list.files(path="Data", pattern="series_matrix.txt"),sep="/")
+
+
+# We read files and turn them into a matrix
+readGEO<-function(x){
+ g<-getGEO(filename=x,GSEMatrix=TRUE, destdir="Data",  AnnotGPL=FALSE , getGPL=FALSE )
+ return(g)
+}
+
+gse <-lapply(list,readGEO);
+
+```
+
+We need to extract the phenodata from the pData tables of each serie
+
+
+
+
+```{r}
+# Edit this function if you need other fields.
+
+getPdata<-function(x){
+	ux<-unlist(x)
+	platform<-which(colnames(pData(ux)) %in% "platform_id")
+	title<-which(colnames(pData(ux)) %in% "title")
+	characteristics<-grep("characteristics",colnames(pData(ux)))
+
+	if(length(characteristics)>1){
+		charac_vec=c()
+		for(i in 1:dim(pData(ux)[,characteristics])[1])
+			charac_vec[i]<-paste(unlist(pData(ux)[i,characteristics]),collapse="-|-")
+		
+
+	}
+
+	if(length(characteristics)==1)
+		charac_vec<-pData(ux)[,characteristics]
+	
+
+	if(length(characteristics)<1)
+		charac_vec<-" "
+	
+
+
+	description<-grep("description",colnames(pData(ux)))
+
+	if(length(description)>1){
+		description_vec=c();
+		for(i in 1:dim(pData(ux)[,description])[1])
+			description_vec[i]<-paste(unlist(pData(ux)[i,description]),collapse="-|-")
+		
+
+	}else{
+		if(length(description)==0)
+			description_vec="No Description";
+		
+
+		if(length(description)==1)
+			description_vec<-pData(ux)[,description]
+		
+
+	}
+
+	
+	source<-grep("source_name",colnames(pData(ux)))
+
+	supplementary<-grep("supplementary_file",colnames(pData(ux)))
+	if(length(supplementary)>1){
+
+		for(i in 1:length(supplementary)){
+			str=paste(pData(ux)[,supplementary[i]],collapse=" ")
+			if(grepl(".CEL.",str,ignore.case=TRUE)){
+				sup_logic=supplementary[i]
+			}
+		}
+
+		supplementary=sup_logic
+
+	}
+		
+	
+	df<-data.frame(pData(ux)[,title], pData(ux)[,platform], charac_vec, description_vec, pData(ux)[,source], pData(ux)[,supplementary])
+
+	rownames(df)<-rownames(pData(ux))
+	colnames(df)<-c("title", "platform", "charc_vec", "description", "source","supplementary_file")
+	return (df)
+
+}
+
+
+phenodata<-do.call(rbind, lapply(gse,"getPdata"))
+
+```
+
+
+Now we get the soft data file and add aditional info to the phenodata table. Here we get that experiment is each of our samples to add this information to the table, if all are from a single experiment can skip this part
+
+```{r message=FALSE, warning=FALSE}
+getSOFT<-function(x){
+  print (x)
+  g<- invisible(getGEO(x,GSEMatrix=FALSE, destdir = "Data"))
+	return(g)
+}
+
+
+soft <-invisible(lapply(gse_ids,getSOFT))
+
+soft_dataframe<-data.frame()
+
+for(i in 1:length(soft)){
+	ux<-soft[[i]];	
+	samples<-ux@header$sample_id
+	geo_gse<-ux@header$geo_accession
+	df<-data.frame(samples,rep(geo_gse,length(samples)))
+	soft_dataframe<-rbind(soft_dataframe,df)	
+}
+
+colnames(soft_dataframe)<-c("X","experiment")
+rownames(soft_dataframe)<-soft_dataframe$X
+
+
+phenodata<-merge(phenodata,soft_dataframe, by="row.names")
+rownames(phenodata)<-phenodata$Row.names
+
+phenodata<-phenodata[,-which(colnames(phenodata) %in% c("Row.names","X"))]
+
+```
+
+
+In this moment a non-automatized part will start, in which we need to analyze the created table and define characteristics of our interest. This is unnecesary if the samples are of the same expermient
+
+
+
+
+
+```{r}
+# CLASIFIY THE SAMPLES BY ANY USER SELECTED CHRITERIA
+
+
+strvec<-apply(phenodata[,which(colnames(phenodata) %in% c("charc_vec","source"))] , 1 , paste , collapse = "-" );
+
+
+keywords<-c("HeLa","HaCaT","sw756","SiHa","C4-I","CaSki","C-33A","HT-3","MS751","ME-180",
+"DMSO O|Primary human neonatal foreskin keratinocytes|Normal human epidermal keratinocytes| primary keratinocytes|tissue: primary keratinocytes|PHK |-Epidermal keratinocytes|tissue: primary keratinocytes|Untreated-Normal human epidermal keratinocytes",
+"Normal Uterus|Normal cervix|Normal cervix epithelium|normal-normal squamous| Cervical normal-",
+"Cervical cancer, squamous cell carcinoma| Cervical cancer-|carcinoma-invasive squamous cell carcinoma of the cervix|invasive squamous cell carcinoma of the cervix|Histology: SCC",
+"Cervical cancer, adenocarcinoma|Histology: ASC", "lesion-high grade squamous|lesion-high grade squamous",
+"Commercial RNA from normal cervix|Toral RNA, commercial-Normal cervix|commercial_BioChain");
+
+v_cell_line=rep("",length(strvec))
+#DEFINE THE CLASIFICATION OF THE SAMPLES
+groups<-list()
+for(i in 1:length(keywords)){
+	group<-grep(keywords[i],strvec, ignore.case = TRUE)
+	if(i>1){
+		for(j in 1:(i-1)){
+			group<-setdiff(group,intersect(group, unlist(groups[j])))
+		}
+	}
+	groups[i]<-list(group);
+}
+
+
+v_cell_line
+
+keywords<-c("HeLa","HaCaT","sw756","SiHa","C4-I","CaSki","C-33A","HT-3","MS751","ME-180", "keratinocytes","NormCervix","CervixCancer-SCC","CervixCancer-ACC","lesion-high","NormComercial")
+
+for(i in 1:length(keywords)){
+	list<-unlist(groups[i])
+	v_cell_line[list]<-rep(keywords[i],length(unlist(list)))
+}
+v_cell_line[v_cell_line==""]="other";
+
+phenodata$samples<-v_cell_line
+
+phenodata<-phenodata[-which(v_cell_line=="other"),]
+
+
+## ** NOTE ** There is an error in the samples. Sample GSE26471 of the GSM650992 experiment is not correctly annotated and named it has to be done manually 
+rn<-rownames(phenodata)
+#rn[which(rn=="1")]="GSE26471"
+rownames(phenodata)<-rn
+
+write.table(phenodata, file = "phenodata.tsv", append = FALSE, quote = TRUE, sep = "\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE,col.names = TRUE, qmethod = c("escape", "double"),fileEncoding = "")
+
+
+```
+
+
+
+In this case this part was done one bye one in order to interpretate the meaning of the information of each sample
+
+
+```{r}
+#USER DEFINED STATES
+
+phenodata$treatment<-c("none", "none", "none", "none", "none", "none", "none", "none", "none", "yes", "yes", "yes", "none", "yes", "yes", "yes", "none", "yes", "yes", "yes", "yes", "yes", "none", "none", "yes", "yes", "yes", "yes", "none", "none", "none", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "yes", "yes", "yes", "none", "none", "none", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "none", "none", "none", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "none", "yes", "yes", "yes", "none", "none", "none", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "none", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "none", "none", "none", "yes", "yes", "yes", "none", "yes", "yes", "yes", "yes", "none", "yes", "yes", "yes", "yes", "none", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "none", "none", "none", "yes", "yes", "yes", "yes", "yes", "yes", "none", "none", "none", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "none", "none", "none", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "none", "none", "none", "yes", "yes", "yes", "none", "yes", "yes", "none", "yes", "yes", "none", "yes", "none", "yes", "yes", "none", "yes", "yes", "none", "yes", "none", "yes", "yes", "none", "yes", "yes", "none", "yes");
+
+# We remove all the samples with any treatment
+phenodata<-phenodata[which(phenodata$treatment=="none"),]
+```
+
+**IMPORTANT.**  We have to save this table in a tab separated (or coma) file. If it is easier for you, you can do the last space in Excel, Calc or similar.
+
+
+```{r}
+
+phenodata<-cbind(rownames(phenodata), phenodata[,c(1,3,4,7,8)])
+colnames(phenodata)[1]<-"rownames"
+
+
+write.table(phenodata, file = "phenodata_HGU133Plus2.tsv", append = FALSE, quote = TRUE, sep = "\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"),fileEncoding = "")
+
+```
+
+
+
+In this moment we can quit R beacuse all the information we process is in the "phenodata.tsv" file and we can analize it.
+
+Remove all used files 
+
+
+
+```{r}
+list<-list.files(path="Data",pattern="*_series_matrix.txt");
+file.remove(paste("Data",list,sep="/"))
+```
+
+
+
