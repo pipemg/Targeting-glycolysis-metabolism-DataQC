@@ -1,4 +1,7 @@
----
+output: 
+  html_document:
+    keep_md: true
+ ---
 Author: Felipe Muñoz-Gonzalez Felipe Muñoz-Gonzalez
 Date: November 10,2016
 Title: HGU133Plus2 Analysis
