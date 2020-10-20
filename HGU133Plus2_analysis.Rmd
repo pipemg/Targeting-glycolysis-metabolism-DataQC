@@ -16,8 +16,6 @@ Date:   November 10,2016
 2. [Download and read the CEL files](#download) 
 3. [Normalize and Quality Control](#norm) 
 4. [Principal Component Analysis](#pca) 
-5. [](#) 
-6. [](#) 
 
 #### <a name="genes"> Analysis using the genes</a>###
 **Abstract:** <br>
