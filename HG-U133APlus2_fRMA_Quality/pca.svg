@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Fig:pca" width="413.54px" height="471.14px" viewBox="0 0 413.54 471.14" version="1.1">
+  <metadata xmlns:gridsvg="http://www.stat.auckland.ac.nz/~paul/R/gridSVG/">
+    <gridsvg:generator name="gridSVG" version="1.4-3" time="2015-10-28 17:01:29"/>
+    <gridsvg:argument name="name" value="HG-U133APlus2_fRMA_Quality/pca.svg"/>
+    <gridsvg:argument name="exportCoords" value="none"/>
+    <gridsvg:argument name="exportMappings" value="none"/>
+    <gridsvg:argument name="exportJS" value="none"/>
+    <gridsvg:argument name="res" value="72"/>
+    <gridsvg:argument name="prefix" value="Fig:pca"/>
+    <gridsvg:argument name="addClasses" value="FALSE"/>
+    <gridsvg:argument name="indent" value="TRUE"/>
+    <gridsvg:argument name="htmlWrapper" value="FALSE"/>
+    <gridsvg:argument name="usePaths" value="none"/>
+    <gridsvg:argument name="uniqueNames" value="TRUE"/>
+    <gridsvg:separator name="id.sep" value="."/>
+    <gridsvg:separator name="gPath.sep" value="::"/>
+    <gridsvg:separator name="vpPath.sep" value="::"/>
+  </metadata>
+  <g transform="translate(0, 471.14) scale(1, -1)">
+    <g id="Fig:pcagridSVG" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="0.75" font-size="12" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" opacity="1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" fill-opacity="0" font-weight="normal" font-style="normal">
+      <defs>
+        <symbol id="Fig:pcagridSVG.pch19" viewBox="-5 -5 10 10" overflow="visible">
+          <circle cx="0" cy="0" r="3.75"/>
+        </symbol>
+      </defs>
+      <g id="Fig:pcaplot_01.background.1">
+        <rect id="Fig:pcaplot_01.background.1.1" x="0" y="0" width="413.54" height="471.14" fill="none" stroke="none" stroke-opacity="0" fill-opacity="0"/>
+      </g>
+      <g id="Fig:pcaplot_01.toplevel.vp.1" font-size="12">
+        <g id="Fig:pcaplot_01.main.vp.1">
+          <g id="Fig:pcaGRID.VP.2961.1">
+            <g id="Fig:pcaplot_01.key.frame.1">
+              <g id="Fig:pcaGRID.VP.2962.1">
+                <g id="Fig:pcaGRID.cellGrob.4491.1">
+                  <g id="Fig:pcaplot_01.key.background.1">
+                    <rect id="Fig:pcaplot_01.key.background.1.1" x="122.76" y="374.65" width="168.02" height="45.98" fill="none" opacity="1" stroke="none" stroke-opacity="0" fill-opacity="0"/>
+                  </g>
+                </g>
+              </g>
+              <g id="Fig:pcaGRID.VP.2963.1">
+                <g id="Fig:pcaGRID.cellGrob.4492.1">
+                  <g id="Fig:pcaplot_01.key.rect.1.1.1">
+                    <rect id="Fig:pcaplot_01.key.rect.1.1.1.1" x="129.43" y="409.14" width="33.36" height="11.5" opacity="1" fill="rgb(228,26,28)" stroke="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1"/>
+                  </g>
+                </g>
+              </g>
+              <g id="Fig:pcaGRID.VP.2964.1">
+                <g id="Fig:pcaGRID.cellGrob.4493.1">
+                  <g id="Fig:pcaplot_01.key.rect.1.2.1">
+                    <rect id="Fig:pcaplot_01.key.rect.1.2.1.1" x="129.43" y="397.65" width="33.36" height="11.5" opacity="1" fill="rgb(55,126,184)" stroke="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1"/>
+                  </g>
+                </g>
+              </g>
+              <g id="Fig:pcaGRID.VP.2965.1">
+                <g id="Fig:pcaGRID.cellGrob.4494.1">
+                  <g id="Fig:pcaplot_01.key.rect.1.3.1">
+                    <rect id="Fig:pcaplot_01.key.rect.1.3.1.1" x="129.43" y="386.15" width="33.36" height="11.5" opacity="1" fill="rgb(77,175,74)" stroke="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1"/>
+                  </g>
+                </g>
+              </g>
+              <g id="Fig:pcaGRID.VP.2966.1">
+                <g id="Fig:pcaGRID.cellGrob.4495.1">
+                  <g id="Fig:pcaplot_01.key.rect.1.4.1">
+                    <rect id="Fig:pcaplot_01.key.rect.1.4.1.1" x="129.43" y="374.65" width="33.36" height="11.5" opacity="1" fill="rgb(152,78,163)" stroke="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1"/>
+                  </g>
+                </g>
+              </g>
+              <g id="Fig:pcaGRID.VP.2967.1">
+                <g id="Fig:pcaGRID.cellGrob.4496.1">
+                  <g id="Fig:pcaplot_01.key.text.2.1.1">
+                    <g id="Fig:pcaplot_01.key.text.2.1.1.1" transform="translate(176.13, 414.89)" stroke-width="0.1">
+                      <g id="Fig:pcaplot_01.key.text.2.1.1.1.scale" transform="scale(1, -1)">
+                        <text x="0" y="0" id="Fig:pcaplot_01.key.text.2.1.1.1.text" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12" font-weight="normal" font-style="normal">
+                          <tspan id="Fig:pcaplot_01.key.text.2.1.1.1.tspan.1" dy="4.31" x="0">cancer_cervix</tspan>
+                        </text>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g id="Fig:pcaGRID.VP.2968.1">
+                <g id="Fig:pcaGRID.cellGrob.4497.1">
+                  <g id="Fig:pcaplot_01.key.text.2.2.1">
+                    <g id="Fig:pcaplot_01.key.text.2.2.1.1" transform="translate(176.13, 403.39)" stroke-width="0.1">
+                      <g id="Fig:pcaplot_01.key.text.2.2.1.1.scale" transform="scale(1, -1)">
+                        <text x="0" y="0" id="Fig:pcaplot_01.key.text.2.2.1.1.text" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12" font-weight="normal" font-style="normal">
+                          <tspan id="Fig:pcaplot_01.key.text.2.2.1.1.tspan.1" dy="4.31" x="0">cancer_HeLa</tspan>
+                        </text>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g id="Fig:pcaGRID.VP.2969.1">
+                <g id="Fig:pcaGRID.cellGrob.4498.1">
+                  <g id="Fig:pcaplot_01.key.text.2.3.1">
+                    <g id="Fig:pcaplot_01.key.text.2.3.1.1" transform="translate(176.13, 391.9)" stroke-width="0.1">
+                      <g id="Fig:pcaplot_01.key.text.2.3.1.1.scale" transform="scale(1, -1)">
+                        <text x="0" y="0" id="Fig:pcaplot_01.key.text.2.3.1.1.text" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12" font-weight="normal" font-style="normal">
+                          <tspan id="Fig:pcaplot_01.key.text.2.3.1.1.tspan.1" dy="4.31" x="0">normal_cervix</tspan>
+                        </text>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g id="Fig:pcaGRID.VP.2970.1">
+                <g id="Fig:pcaGRID.cellGrob.4499.1">
+                  <g id="Fig:pcaplot_01.key.text.2.4.1">
+                    <g id="Fig:pcaplot_01.key.text.2.4.1.1" transform="translate(176.13, 380.4)" stroke-width="0.1">
+                      <g id="Fig:pcaplot_01.key.text.2.4.1.1.scale" transform="scale(1, -1)">
+                        <text x="0" y="0" id="Fig:pcaplot_01.key.text.2.4.1.1.text" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12" font-weight="normal" font-style="normal">
+                          <tspan id="Fig:pcaplot_01.key.text.2.4.1.1.tspan.1" dy="4.31" x="0">normal_keratinocyte</tspan>
+                        </text>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01.xlab.vp.1">
+          <g id="Fig:pcaplot_01.xlab.1">
+            <g id="Fig:pcaplot_01.xlab.1.1" transform="translate(222.34, 60.81)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.xlab.1.1.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.xlab.1.1.text" text-anchor="middle" opacity="1" stroke="rgb(0,0,0)" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.xlab.1.1.tspan.1" dy="4.31" x="0">PC1</tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01.ylab.vp.1">
+          <g id="Fig:pcaplot_01.ylab.1">
+            <g id="Fig:pcaplot_01.ylab.1.1" transform="translate(10.31, 220.47)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ylab.1.1.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ylab.1.1.text" transform="rotate(-90)" text-anchor="middle" opacity="1" stroke="rgb(0,0,0)" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ylab.1.1.tspan.1" dy="4.31" x="0">PC2</tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01.figure.vp.1"/>
+        <defs>
+          <clipPath id="Fig:pcaplot_01.panel.1.1.vp.1.clipPath">
+            <rect x="60.14" y="95.3" width="324.38" height="250.34" fill="none" stroke="none"/>
+          </clipPath>
+        </defs>
+        <g id="Fig:pcaplot_01.panel.1.1.vp.1" clip-path="url(#Fig:pcaplot_01.panel.1.1.vp.1.clipPath)"/>
+        <g id="Fig:pcaplot_01.strip.1.1.off.vp.1">
+          <g id="Fig:pcaplot_01.ticks.top.panel.1.1.1">
+            <polyline id="Fig:pcaplot_01.ticks.top.panel.1.1.1.1" points="79.57,345.65 79.57,351.31" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.top.panel.1.1.1.2" points="135.15,345.65 135.15,351.31" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.top.panel.1.1.1.3" points="190.73,345.65 190.73,351.31" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.top.panel.1.1.1.4" points="246.32,345.65 246.32,351.31" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.top.panel.1.1.1.5" points="301.9,345.65 301.9,351.31" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.top.panel.1.1.1.6" points="357.48,345.65 357.48,351.31" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01.strip.left.1.1.off.vp.1">
+          <g id="Fig:pcaplot_01.ticks.left.panel.1.1.1">
+            <polyline id="Fig:pcaplot_01.ticks.left.panel.1.1.1.1" points="60.14,131.52 54.47,131.52" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.left.panel.1.1.1.2" points="60.14,187.1 54.47,187.1" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.left.panel.1.1.1.3" points="60.14,242.68 54.47,242.68" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.left.panel.1.1.1.4" points="60.14,298.27 54.47,298.27" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+          </g>
+          <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1">
+            <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.1" transform="translate(48.81, 131.52)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.1.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.1.text" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.1.tspan.1" dy="3.59" x="0">-100</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.2" transform="translate(48.81, 187.1)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.2.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.2.text" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.2.tspan.1" dy="3.59" x="0">-50</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.3" transform="translate(48.81, 242.68)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.3.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.3.text" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.3.tspan.1" dy="3.59" x="0">0</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.4" transform="translate(48.81, 298.27)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.4.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.4.text" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.4.tspan.1" dy="3.59" x="0">50</tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01.panel.1.1.off.vp.1">
+          <g id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1">
+            <polyline id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1.1" points="79.57,95.3 79.57,89.63" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1.2" points="135.15,95.3 135.15,89.63" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1.3" points="190.73,95.3 190.73,89.63" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1.4" points="246.32,95.3 246.32,89.63" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1.5" points="301.9,95.3 301.9,89.63" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1.6" points="357.48,95.3 357.48,89.63" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+          </g>
+          <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1">
+            <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.1" transform="translate(79.57, 83.96)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.1.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.1.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.1.tspan.1" dy="7.18" x="0">-150</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.2" transform="translate(135.15, 83.96)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.2.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.2.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.2.tspan.1" dy="7.18" x="0">-100</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.3" transform="translate(190.73, 83.96)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.3.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.3.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.3.tspan.1" dy="7.18" x="0">-50</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.4" transform="translate(246.32, 83.96)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.4.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.4.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.4.tspan.1" dy="7.18" x="0">0</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.5" transform="translate(301.9, 83.96)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.5.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.5.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.5.tspan.1" dy="7.18" x="0">50</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.6" transform="translate(357.48, 83.96)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.6.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.6.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.6.tspan.1" dy="7.18" x="0">100</tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+          <g id="Fig:pcaplot_01.ticks.right.panel.1.1.1">
+            <polyline id="Fig:pcaplot_01.ticks.right.panel.1.1.1.1" points="384.53,131.52 390.2,131.52" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.right.panel.1.1.1.2" points="384.53,187.1 390.2,187.1" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.right.panel.1.1.1.3" points="384.53,242.68 390.2,242.68" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.right.panel.1.1.1.4" points="384.53,298.27 390.2,298.27" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+          </g>
+        </g>
+        <defs>
+          <clipPath id="Fig:pcaplot_01.panel.1.1.vp.2.clipPath">
+            <rect x="60.14" y="95.3" width="324.38" height="250.34" fill="none" stroke="none"/>
+          </clipPath>
+        </defs>
+        <g id="Fig:pcaplot_01.panel.1.1.vp.2" clip-path="url(#Fig:pcaplot_01.panel.1.1.vp.2.clipPath)">
+          <g id="Fig:pcaplot_01.xyplot.points.panel.1.1.1">
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.1" xlink:href="#Fig:pcagridSVG.pch19" x="81.89" y="174.58" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(55,126,184)" stroke-width="0.94" opacity="1" fill="rgb(55,126,184)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm1" onclick="plotObjRespond('click', 1, 'pca')" onmouseover="plotObjRespond('show', 1, 'pca')" onmouseout="plotObjRespond('hide', 1, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.2" xlink:href="#Fig:pcagridSVG.pch19" x="82.63" y="176.96" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(55,126,184)" stroke-width="0.94" opacity="1" fill="rgb(55,126,184)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm2" onclick="plotObjRespond('click', 2, 'pca')" onmouseover="plotObjRespond('show', 2, 'pca')" onmouseout="plotObjRespond('hide', 2, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.3" xlink:href="#Fig:pcagridSVG.pch19" x="80.06" y="177.51" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(55,126,184)" stroke-width="0.94" opacity="1" fill="rgb(55,126,184)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm3" onclick="plotObjRespond('click', 3, 'pca')" onmouseover="plotObjRespond('show', 3, 'pca')" onmouseout="plotObjRespond('hide', 3, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.4" xlink:href="#Fig:pcagridSVG.pch19" x="148.45" y="116.46" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(55,126,184)" stroke-width="0.94" opacity="1" fill="rgb(55,126,184)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm4" onclick="plotObjRespond('click', 4, 'pca')" onmouseover="plotObjRespond('show', 4, 'pca')" onmouseout="plotObjRespond('hide', 4, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.5" xlink:href="#Fig:pcagridSVG.pch19" x="119.01" y="110.67" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(55,126,184)" stroke-width="0.94" opacity="1" fill="rgb(55,126,184)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm5" onclick="plotObjRespond('click', 5, 'pca')" onmouseover="plotObjRespond('show', 5, 'pca')" onmouseout="plotObjRespond('hide', 5, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.6" xlink:href="#Fig:pcagridSVG.pch19" x="256.4" y="298.84" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm6" onclick="plotObjRespond('click', 6, 'pca')" onmouseover="plotObjRespond('show', 6, 'pca')" onmouseout="plotObjRespond('hide', 6, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.7" xlink:href="#Fig:pcagridSVG.pch19" x="235.22" y="294.71" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm7" onclick="plotObjRespond('click', 7, 'pca')" onmouseover="plotObjRespond('show', 7, 'pca')" onmouseout="plotObjRespond('hide', 7, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.8" xlink:href="#Fig:pcagridSVG.pch19" x="291.68" y="259.81" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm8" onclick="plotObjRespond('click', 8, 'pca')" onmouseover="plotObjRespond('show', 8, 'pca')" onmouseout="plotObjRespond('hide', 8, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.9" xlink:href="#Fig:pcagridSVG.pch19" x="264.85" y="298.76" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm9" onclick="plotObjRespond('click', 9, 'pca')" onmouseover="plotObjRespond('show', 9, 'pca')" onmouseout="plotObjRespond('hide', 9, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.10" xlink:href="#Fig:pcagridSVG.pch19" x="268.75" y="301.6" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm10" onclick="plotObjRespond('click', 10, 'pca')" onmouseover="plotObjRespond('show', 10, 'pca')" onmouseout="plotObjRespond('hide', 10, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.11" xlink:href="#Fig:pcagridSVG.pch19" x="232.18" y="295.38" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm11" onclick="plotObjRespond('click', 11, 'pca')" onmouseover="plotObjRespond('show', 11, 'pca')" onmouseout="plotObjRespond('hide', 11, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.12" xlink:href="#Fig:pcagridSVG.pch19" x="227.81" y="303.04" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm12" onclick="plotObjRespond('click', 12, 'pca')" onmouseover="plotObjRespond('show', 12, 'pca')" onmouseout="plotObjRespond('hide', 12, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.13" xlink:href="#Fig:pcagridSVG.pch19" x="192.1" y="296.39" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm13" onclick="plotObjRespond('click', 13, 'pca')" onmouseover="plotObjRespond('show', 13, 'pca')" onmouseout="plotObjRespond('hide', 13, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.14" xlink:href="#Fig:pcagridSVG.pch19" x="188.78" y="287.48" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm14" onclick="plotObjRespond('click', 14, 'pca')" onmouseover="plotObjRespond('show', 14, 'pca')" onmouseout="plotObjRespond('hide', 14, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.15" xlink:href="#Fig:pcagridSVG.pch19" x="183.84" y="305.28" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm15" onclick="plotObjRespond('click', 15, 'pca')" onmouseover="plotObjRespond('show', 15, 'pca')" onmouseout="plotObjRespond('hide', 15, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.16" xlink:href="#Fig:pcagridSVG.pch19" x="228.89" y="330.27" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm16" onclick="plotObjRespond('click', 16, 'pca')" onmouseover="plotObjRespond('show', 16, 'pca')" onmouseout="plotObjRespond('hide', 16, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.17" xlink:href="#Fig:pcagridSVG.pch19" x="222.43" y="327.89" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm17" onclick="plotObjRespond('click', 17, 'pca')" onmouseover="plotObjRespond('show', 17, 'pca')" onmouseout="plotObjRespond('hide', 17, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.18" xlink:href="#Fig:pcagridSVG.pch19" x="281.66" y="280.46" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm18" onclick="plotObjRespond('click', 18, 'pca')" onmouseover="plotObjRespond('show', 18, 'pca')" onmouseout="plotObjRespond('hide', 18, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.19" xlink:href="#Fig:pcagridSVG.pch19" x="274.21" y="301.31" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm19" onclick="plotObjRespond('click', 19, 'pca')" onmouseover="plotObjRespond('show', 19, 'pca')" onmouseout="plotObjRespond('hide', 19, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.20" xlink:href="#Fig:pcagridSVG.pch19" x="252.18" y="312.51" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm20" onclick="plotObjRespond('click', 20, 'pca')" onmouseover="plotObjRespond('show', 20, 'pca')" onmouseout="plotObjRespond('hide', 20, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.21" xlink:href="#Fig:pcagridSVG.pch19" x="226.55" y="309.1" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm21" onclick="plotObjRespond('click', 21, 'pca')" onmouseover="plotObjRespond('show', 21, 'pca')" onmouseout="plotObjRespond('hide', 21, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.22" xlink:href="#Fig:pcagridSVG.pch19" x="247.12" y="325.87" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm22" onclick="plotObjRespond('click', 22, 'pca')" onmouseover="plotObjRespond('show', 22, 'pca')" onmouseout="plotObjRespond('hide', 22, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.23" xlink:href="#Fig:pcagridSVG.pch19" x="253.49" y="325.41" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm23" onclick="plotObjRespond('click', 23, 'pca')" onmouseover="plotObjRespond('show', 23, 'pca')" onmouseout="plotObjRespond('hide', 23, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.24" xlink:href="#Fig:pcagridSVG.pch19" x="230.63" y="324.27" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm24" onclick="plotObjRespond('click', 24, 'pca')" onmouseover="plotObjRespond('show', 24, 'pca')" onmouseout="plotObjRespond('hide', 24, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.25" xlink:href="#Fig:pcagridSVG.pch19" x="217.67" y="326.99" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm25" onclick="plotObjRespond('click', 25, 'pca')" onmouseover="plotObjRespond('show', 25, 'pca')" onmouseout="plotObjRespond('hide', 25, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.26" xlink:href="#Fig:pcagridSVG.pch19" x="258.15" y="314.37" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm26" onclick="plotObjRespond('click', 26, 'pca')" onmouseover="plotObjRespond('show', 26, 'pca')" onmouseout="plotObjRespond('hide', 26, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.27" xlink:href="#Fig:pcagridSVG.pch19" x="232.47" y="304.33" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm27" onclick="plotObjRespond('click', 27, 'pca')" onmouseover="plotObjRespond('show', 27, 'pca')" onmouseout="plotObjRespond('hide', 27, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.28" xlink:href="#Fig:pcagridSVG.pch19" x="239.63" y="300.01" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm28" onclick="plotObjRespond('click', 28, 'pca')" onmouseover="plotObjRespond('show', 28, 'pca')" onmouseout="plotObjRespond('hide', 28, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.29" xlink:href="#Fig:pcagridSVG.pch19" x="236.86" y="312.61" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm29" onclick="plotObjRespond('click', 29, 'pca')" onmouseover="plotObjRespond('show', 29, 'pca')" onmouseout="plotObjRespond('hide', 29, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.30" xlink:href="#Fig:pcagridSVG.pch19" x="258.85" y="307.82" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm30" onclick="plotObjRespond('click', 30, 'pca')" onmouseover="plotObjRespond('show', 30, 'pca')" onmouseout="plotObjRespond('hide', 30, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.31" xlink:href="#Fig:pcagridSVG.pch19" x="261.67" y="325.22" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm31" onclick="plotObjRespond('click', 31, 'pca')" onmouseover="plotObjRespond('show', 31, 'pca')" onmouseout="plotObjRespond('hide', 31, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.32" xlink:href="#Fig:pcagridSVG.pch19" x="239.52" y="284.92" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm32" onclick="plotObjRespond('click', 32, 'pca')" onmouseover="plotObjRespond('show', 32, 'pca')" onmouseout="plotObjRespond('hide', 32, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.33" xlink:href="#Fig:pcagridSVG.pch19" x="218.71" y="291.69" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm33" onclick="plotObjRespond('click', 33, 'pca')" onmouseover="plotObjRespond('show', 33, 'pca')" onmouseout="plotObjRespond('hide', 33, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.34" xlink:href="#Fig:pcagridSVG.pch19" x="264.11" y="290.01" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm34" onclick="plotObjRespond('click', 34, 'pca')" onmouseover="plotObjRespond('show', 34, 'pca')" onmouseout="plotObjRespond('hide', 34, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.35" xlink:href="#Fig:pcagridSVG.pch19" x="288.55" y="259.76" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm35" onclick="plotObjRespond('click', 35, 'pca')" onmouseover="plotObjRespond('show', 35, 'pca')" onmouseout="plotObjRespond('hide', 35, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.36" xlink:href="#Fig:pcagridSVG.pch19" x="285.34" y="292.61" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm36" onclick="plotObjRespond('click', 36, 'pca')" onmouseover="plotObjRespond('show', 36, 'pca')" onmouseout="plotObjRespond('hide', 36, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.37" xlink:href="#Fig:pcagridSVG.pch19" x="325.83" y="157.5" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm37" onclick="plotObjRespond('click', 37, 'pca')" onmouseover="plotObjRespond('show', 37, 'pca')" onmouseout="plotObjRespond('hide', 37, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.38" xlink:href="#Fig:pcagridSVG.pch19" x="303.75" y="230.85" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm38" onclick="plotObjRespond('click', 38, 'pca')" onmouseover="plotObjRespond('show', 38, 'pca')" onmouseout="plotObjRespond('hide', 38, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.39" xlink:href="#Fig:pcagridSVG.pch19" x="318.69" y="184.34" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm39" onclick="plotObjRespond('click', 39, 'pca')" onmouseover="plotObjRespond('show', 39, 'pca')" onmouseout="plotObjRespond('hide', 39, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.40" xlink:href="#Fig:pcagridSVG.pch19" x="251.88" y="231.81" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm40" onclick="plotObjRespond('click', 40, 'pca')" onmouseover="plotObjRespond('show', 40, 'pca')" onmouseout="plotObjRespond('hide', 40, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.41" xlink:href="#Fig:pcagridSVG.pch19" x="257.95" y="222.36" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm41" onclick="plotObjRespond('click', 41, 'pca')" onmouseover="plotObjRespond('show', 41, 'pca')" onmouseout="plotObjRespond('hide', 41, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.42" xlink:href="#Fig:pcagridSVG.pch19" x="98.77" y="140.64" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(55,126,184)" stroke-width="0.94" opacity="1" fill="rgb(55,126,184)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm42" onclick="plotObjRespond('click', 42, 'pca')" onmouseover="plotObjRespond('show', 42, 'pca')" onmouseout="plotObjRespond('hide', 42, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.43" xlink:href="#Fig:pcagridSVG.pch19" x="101.86" y="143.58" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(55,126,184)" stroke-width="0.94" opacity="1" fill="rgb(55,126,184)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm43" onclick="plotObjRespond('click', 43, 'pca')" onmouseover="plotObjRespond('show', 43, 'pca')" onmouseout="plotObjRespond('hide', 43, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.44" xlink:href="#Fig:pcagridSVG.pch19" x="103.9" y="139.22" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(55,126,184)" stroke-width="0.94" opacity="1" fill="rgb(55,126,184)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm44" onclick="plotObjRespond('click', 44, 'pca')" onmouseover="plotObjRespond('show', 44, 'pca')" onmouseout="plotObjRespond('hide', 44, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.45" xlink:href="#Fig:pcagridSVG.pch19" x="129.94" y="141.73" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(55,126,184)" stroke-width="0.94" opacity="1" fill="rgb(55,126,184)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm45" onclick="plotObjRespond('click', 45, 'pca')" onmouseover="plotObjRespond('show', 45, 'pca')" onmouseout="plotObjRespond('hide', 45, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.46" xlink:href="#Fig:pcagridSVG.pch19" x="289.85" y="237.63" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(77,175,74)" stroke-width="0.94" opacity="1" fill="rgb(77,175,74)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm46" onclick="plotObjRespond('click', 46, 'pca')" onmouseover="plotObjRespond('show', 46, 'pca')" onmouseout="plotObjRespond('hide', 46, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.47" xlink:href="#Fig:pcagridSVG.pch19" x="308.91" y="225.75" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm47" onclick="plotObjRespond('click', 47, 'pca')" onmouseover="plotObjRespond('show', 47, 'pca')" onmouseout="plotObjRespond('hide', 47, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.48" xlink:href="#Fig:pcagridSVG.pch19" x="293.9" y="186.87" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm48" onclick="plotObjRespond('click', 48, 'pca')" onmouseover="plotObjRespond('show', 48, 'pca')" onmouseout="plotObjRespond('hide', 48, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.49" xlink:href="#Fig:pcagridSVG.pch19" x="268.53" y="245.55" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm49" onclick="plotObjRespond('click', 49, 'pca')" onmouseover="plotObjRespond('show', 49, 'pca')" onmouseout="plotObjRespond('hide', 49, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.50" xlink:href="#Fig:pcagridSVG.pch19" x="295.35" y="229.34" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm50" onclick="plotObjRespond('click', 50, 'pca')" onmouseover="plotObjRespond('show', 50, 'pca')" onmouseout="plotObjRespond('hide', 50, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.51" xlink:href="#Fig:pcagridSVG.pch19" x="296.65" y="208.25" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm51" onclick="plotObjRespond('click', 51, 'pca')" onmouseover="plotObjRespond('show', 51, 'pca')" onmouseout="plotObjRespond('hide', 51, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.52" xlink:href="#Fig:pcagridSVG.pch19" x="198.9" y="183.26" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm52" onclick="plotObjRespond('click', 52, 'pca')" onmouseover="plotObjRespond('show', 52, 'pca')" onmouseout="plotObjRespond('hide', 52, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.53" xlink:href="#Fig:pcagridSVG.pch19" x="295.49" y="229" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm53" onclick="plotObjRespond('click', 53, 'pca')" onmouseover="plotObjRespond('show', 53, 'pca')" onmouseout="plotObjRespond('hide', 53, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.54" xlink:href="#Fig:pcagridSVG.pch19" x="309.86" y="190.04" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm54" onclick="plotObjRespond('click', 54, 'pca')" onmouseover="plotObjRespond('show', 54, 'pca')" onmouseout="plotObjRespond('hide', 54, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.55" xlink:href="#Fig:pcagridSVG.pch19" x="310.02" y="225.75" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm55" onclick="plotObjRespond('click', 55, 'pca')" onmouseover="plotObjRespond('show', 55, 'pca')" onmouseout="plotObjRespond('hide', 55, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.56" xlink:href="#Fig:pcagridSVG.pch19" x="352.13" y="211.34" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(77,175,74)" stroke-width="0.94" opacity="1" fill="rgb(77,175,74)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm56" onclick="plotObjRespond('click', 56, 'pca')" onmouseover="plotObjRespond('show', 56, 'pca')" onmouseout="plotObjRespond('hide', 56, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.57" xlink:href="#Fig:pcagridSVG.pch19" x="364.61" y="184.52" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm57" onclick="plotObjRespond('click', 57, 'pca')" onmouseover="plotObjRespond('show', 57, 'pca')" onmouseout="plotObjRespond('hide', 57, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.58" xlink:href="#Fig:pcagridSVG.pch19" x="324.26" y="188.75" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm58" onclick="plotObjRespond('click', 58, 'pca')" onmouseover="plotObjRespond('show', 58, 'pca')" onmouseout="plotObjRespond('hide', 58, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.59" xlink:href="#Fig:pcagridSVG.pch19" x="354.77" y="187.08" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm59" onclick="plotObjRespond('click', 59, 'pca')" onmouseover="plotObjRespond('show', 59, 'pca')" onmouseout="plotObjRespond('hide', 59, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.60" xlink:href="#Fig:pcagridSVG.pch19" x="317.64" y="213.56" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm60" onclick="plotObjRespond('click', 60, 'pca')" onmouseover="plotObjRespond('show', 60, 'pca')" onmouseout="plotObjRespond('hide', 60, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.61" xlink:href="#Fig:pcagridSVG.pch19" x="339.24" y="182.37" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm61" onclick="plotObjRespond('click', 61, 'pca')" onmouseover="plotObjRespond('show', 61, 'pca')" onmouseout="plotObjRespond('hide', 61, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.62" xlink:href="#Fig:pcagridSVG.pch19" x="315.95" y="209.23" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm62" onclick="plotObjRespond('click', 62, 'pca')" onmouseover="plotObjRespond('show', 62, 'pca')" onmouseout="plotObjRespond('hide', 62, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.63" xlink:href="#Fig:pcagridSVG.pch19" x="347.89" y="198.62" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm63" onclick="plotObjRespond('click', 63, 'pca')" onmouseover="plotObjRespond('show', 63, 'pca')" onmouseout="plotObjRespond('hide', 63, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.64" xlink:href="#Fig:pcagridSVG.pch19" x="298.8" y="151.57" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm64" onclick="plotObjRespond('click', 64, 'pca')" onmouseover="plotObjRespond('show', 64, 'pca')" onmouseout="plotObjRespond('hide', 64, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.65" xlink:href="#Fig:pcagridSVG.pch19" x="335.6" y="216.15" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm65" onclick="plotObjRespond('click', 65, 'pca')" onmouseover="plotObjRespond('show', 65, 'pca')" onmouseout="plotObjRespond('hide', 65, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.66" xlink:href="#Fig:pcagridSVG.pch19" x="315.09" y="155.22" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm66" onclick="plotObjRespond('click', 66, 'pca')" onmouseover="plotObjRespond('show', 66, 'pca')" onmouseout="plotObjRespond('hide', 66, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.67" xlink:href="#Fig:pcagridSVG.pch19" x="319.05" y="148.12" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm67" onclick="plotObjRespond('click', 67, 'pca')" onmouseover="plotObjRespond('show', 67, 'pca')" onmouseout="plotObjRespond('hide', 67, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.68" xlink:href="#Fig:pcagridSVG.pch19" x="305.45" y="166.62" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm68" onclick="plotObjRespond('click', 68, 'pca')" onmouseover="plotObjRespond('show', 68, 'pca')" onmouseout="plotObjRespond('hide', 68, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.69" xlink:href="#Fig:pcagridSVG.pch19" x="320.8" y="198.85" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm69" onclick="plotObjRespond('click', 69, 'pca')" onmouseover="plotObjRespond('show', 69, 'pca')" onmouseout="plotObjRespond('hide', 69, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.70" xlink:href="#Fig:pcagridSVG.pch19" x="300.85" y="205.6" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(228,26,28)" stroke-width="0.94" opacity="1" fill="rgb(228,26,28)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm70" onclick="plotObjRespond('click', 70, 'pca')" onmouseover="plotObjRespond('show', 70, 'pca')" onmouseout="plotObjRespond('hide', 70, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.71" xlink:href="#Fig:pcagridSVG.pch19" x="163.64" y="302.54" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(152,78,163)" stroke-width="0.94" opacity="1" fill="rgb(152,78,163)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm71" onclick="plotObjRespond('click', 71, 'pca')" onmouseover="plotObjRespond('show', 71, 'pca')" onmouseout="plotObjRespond('hide', 71, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.72" xlink:href="#Fig:pcagridSVG.pch19" x="163.34" y="285.62" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(152,78,163)" stroke-width="0.94" opacity="1" fill="rgb(152,78,163)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm72" onclick="plotObjRespond('click', 72, 'pca')" onmouseover="plotObjRespond('show', 72, 'pca')" onmouseout="plotObjRespond('hide', 72, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.73" xlink:href="#Fig:pcagridSVG.pch19" x="170.36" y="281.87" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(152,78,163)" stroke-width="0.94" opacity="1" fill="rgb(152,78,163)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm73" onclick="plotObjRespond('click', 73, 'pca')" onmouseover="plotObjRespond('show', 73, 'pca')" onmouseout="plotObjRespond('hide', 73, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.74" xlink:href="#Fig:pcagridSVG.pch19" x="160.19" y="285.01" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(152,78,163)" stroke-width="0.94" opacity="1" fill="rgb(152,78,163)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm74" onclick="plotObjRespond('click', 74, 'pca')" onmouseover="plotObjRespond('show', 74, 'pca')" onmouseout="plotObjRespond('hide', 74, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.75" xlink:href="#Fig:pcagridSVG.pch19" x="157.49" y="288.07" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(152,78,163)" stroke-width="0.94" opacity="1" fill="rgb(152,78,163)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm75" onclick="plotObjRespond('click', 75, 'pca')" onmouseover="plotObjRespond('show', 75, 'pca')" onmouseout="plotObjRespond('hide', 75, 'pca')"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.76" xlink:href="#Fig:pcagridSVG.pch19" x="160.49" y="284.92" width="8" height="8" transform="translate(-4,-4)" stroke="rgb(152,78,163)" stroke-width="0.94" opacity="1" fill="rgb(152,78,163)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal" class="aqm76" onclick="plotObjRespond('click', 76, 'pca')" onmouseover="plotObjRespond('show', 76, 'pca')" onmouseout="plotObjRespond('hide', 76, 'pca')"/>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01.panel.1.1.off.vp.2">
+          <g id="Fig:pcaplot_01.border.panel.1.1.1">
+            <rect id="Fig:pcaplot_01.border.panel.1.1.1.1" x="60.14" y="95.3" width="324.38" height="250.34" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="0.75" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0"/>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01..1"/>
+      </g>
+    </g>
+  </g>
+</svg>
