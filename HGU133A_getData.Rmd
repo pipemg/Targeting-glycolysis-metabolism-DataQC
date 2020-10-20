@@ -1,0 +1,348 @@
+---
+title: "R Notebook"
+output:
+  html_document: default
+  html_notebook: default
+---
+
+
+## An&aacute;lisis de datos de Affymetrix HGU133A-Plus2 ##
+
+### &Iacute;ndice de contenido###
+1. [Sample Description](#samples) 
+2. [Technology description](#technology) 
+3. [Sample selection ](#selection) 
+
+**Abstract:** <br>
+This file contains all the information required for the microarray analisis of the data in the article ____ and can be used to analize other kind of data but is focused in Affymetrix HGU133APlus2 Microarrays. <br><br>
+**Author:** <br>Felipe de Jes&uacute;s Mu&ntilde;oz Gonz&aacute;lez <br>
+Instituto Nacional de Medicina Genomica (INMEGEN) <br>
+M&eacute;xico City, January 2016.<br>
+
+####  <a name="samples">Sample Description</a> ####
+
+   - <b>HeLa:</b> Epitelial Cervical Cancer inmortalized cell line of Homo sapiens
+   - <b>HaCaT:</b> HaCaT is a spontaneously transformed aneuploid immortal keratinocyte cell line from adult human skin
+   - <b>Keratinocitos: </b> predominant cell type in the epidermis, the outermost layer of the skin, constituting 90% of the cells found there.
+   - <b>Normal Biopsys:</b> Biopsys of patients whitout cervical cancer
+   - <b>Cervical Cancer Biopsys:</b> Biopsys of patients whith cervical cancer
+
+#### <a name="technology">Technology Description</a> ###
+
+**GeneChip&reg; Human Genome U133 Plus 2.0 Array**
+
+First and most comprehensive whole human genome expression array
+ - Convenient one-array view.
+ - Complete coverage of the Human Genome U133 Set plus 6,500 additional genes for analysis of over 47,000 transcripts.
+ - Use the Power of the Probe Set and get multiple independent measurements for each transcript that  - deliver the greatest accuracy and reproducibility of any microarray platform.
+ - GeneChip&reg; System: Richer data, sharper insights, better decisions
+
+**Array Profile**<br>
+All probe sets represented on the GeneChip&reg; Human Genome U133 Set are identically replicated on the GeneChip&reg; Human Genome U133 Plus 2.0 Array. The sequences from which these probe sets were derived were selected from GenBank&reg;, dbEST, and RefSeq. The sequence clusters were created from the UniGene database (Build 133, April 20, 2001) and then refined by analysis and comparison with a number of other publicly available databases, including the Washington University EST trace repository and the University of California, Santa Cruz Golden-Path human genome database (April 2001 release).
+In addition, there are 9,921 new probe sets representing approximately 6,500 new genes. These gene sequences were selected from GenBank, dbEST, and RefSeq. Sequence clusters were created from the UniGene database (Build 159, January 25, 2003) and refined by analysis and comparison with a number of other publicly available databases, including the Washington University EST trace repository and the NCBI human genome assembly (Build 31).
+ 
+For research use only. Not for use in diagnostic procedures.
+ 
+
+#### <a name="selection">Sample Selection</a>###
+
+We used the Gene Expression Omnibus database (GEO) where we selected all the experiments of the HGU133APlus2 microarray technology that contains one or more of this categories:
+
+ - Normal Cervix Biopsis 
+ - Cervical Cancer Biopsis 
+ - Cervical cancer cell lines
+ - Normal epitelial cell lines
+
+Using this, we get this GSE ids
+
+ |                               ID                                        | PUBMEDID | Total Samples |
+ | ---------------------------------------------------------------------- | -------- |  -------------|
+ | [GSE6932](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE6932) | [ ](http://www.ncbi.nlm.nih.gov/pubmed/ ) |   |
+
+ Load libraries
+```{r, message=FALSE}
+
+# Get data from NCBI Gene Expression Omnibus (GEO)
+
+if(!require(GEOquery)){
+  source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOquery'))
+}
+
+suppressMessages(library(GEOquery, quietly = TRUE))
+
+# Provides high level functions for reading Affy .CEL files, phenotypic data
+if(!require(simpleaffy)){
+    source('http://bioconductor.org/biocLite.R'); biocLite(c('simpleaffy'))
+}
+suppressMessages(library(simpleaffy, quietly = TRUE))
+```
+
+
+We create a directory
+
+```{r, message=FALSE}
+dir.create("Data", showWarnings = FALSE); #THIS NAME IS IMPOSED BY THE TECHNOLOGY
+```
+ 
+ List the samples to download
+ 
+```{r}
+
+gse_ids<-sort(c("GSE6932", "GSE7009", "GSE7803", "GSE8760", "GSE1417","GSE9750", "GSE10436",  "GSE2361", "GSE26688", "GSE6783","GSE68606"));
+
+```
+
+Download the samples
+
+```{r, message=FALSE}
+#GET THE MATRIX SERIES FILES
+
+getGEO2<-function(x){
+   g<-invisible(getGEO(x,GSEMatrix=TRUE, destdir="Data",  AnnotGPL=FALSE , getGPL=FALSE ))
+	return(g)
+}
+
+# We will use the created function to get the GEO files for each of the gse_ids
+gse<-lapply(gse_ids, "getGEO2")
+
+```
+
+
+Remove unused samples and read to an R variable 
+
+```{r, message=FALSE}
+
+# Remove the series matrix files of other technologies, in this case  HGU133APlus2 = GLP570
+list<-list.files(path="Data",pattern="series_matrix.txt.gz");
+#remove other technology microararys
+list<-list[intersect(grep("GSE.+-GPL",list,perl=TRUE),grep("GPL96",list,perl=TRUE,invert=TRUE))]
+file.remove(paste("Data",list,sep="/"))
+
+# Now we extract the files
+list<-paste("Data",list.files(path="Data", pattern="series_matrix.txt.gz"),sep="/")
+lapply(list, gunzip);
+
+list<-paste("Data",list.files(path="Data", pattern="series_matrix.txt"),sep="/")
+
+
+# We read files and turn them into a matrix
+readGEO<-function(x){
+ g<-getGEO(filename=x,GSEMatrix=TRUE, destdir="Data",  AnnotGPL=FALSE , getGPL=FALSE )
+ return(g)
+}
+
+gse <-lapply(list,readGEO);
+
+```
+
+We need to extract the phenodata from the pData tables of each serie
+
+
+
+
+```{r}
+# Edit this function if you need other fields.
+
+getPdata<-function(x){
+	ux<-unlist(x)
+	platform<-which(colnames(pData(ux)) %in% "platform_id")
+	title<-which(colnames(pData(ux)) %in% "title")
+	characteristics<-grep("characteristics",colnames(pData(ux)))
+
+	if(length(characteristics)>1){
+		charac_vec=c()
+		for(i in 1:dim(pData(ux)[,characteristics])[1])
+			charac_vec[i]<-paste(unlist(pData(ux)[i,characteristics]),collapse="-|-")
+		
+
+	}
+
+	if(length(characteristics)==1)
+		charac_vec<-pData(ux)[,characteristics]
+	
+
+	if(length(characteristics)<1)
+		charac_vec<-" "
+	
+
+
+	description<-grep("description",colnames(pData(ux)))
+
+	if(length(description)>1){
+		description_vec=c();
+		for(i in 1:dim(pData(ux)[,description])[1])
+			description_vec[i]<-paste(unlist(pData(ux)[i,description]),collapse="-|-")
+		
+
+	}else{
+		if(length(description)==0)
+			description_vec="No Description";
+		
+
+		if(length(description)==1)
+			description_vec<-pData(ux)[,description]
+		
+
+	}
+
+	
+	source<-grep("source_name",colnames(pData(ux)))
+
+	supplementary<-grep("supplementary_file",colnames(pData(ux)))
+	if(length(supplementary)>1){
+
+		for(i in 1:length(supplementary)){
+			str=paste(pData(ux)[,supplementary[i]],collapse=" ")
+			if(grepl(".CEL.",str,ignore.case=TRUE)){
+				sup_logic=supplementary[i]
+			}
+		}
+
+		supplementary=sup_logic
+
+	}
+		
+	
+	df<-data.frame(pData(ux)[,title], pData(ux)[,platform], charac_vec, description_vec, pData(ux)[,source], pData(ux)[,supplementary])
+
+	rownames(df)<-rownames(pData(ux))
+	colnames(df)<-c("title", "platform", "charc_vec", "description", "source","supplementary_file")
+	return (df)
+
+}
+
+
+phenodata<-do.call(rbind, lapply(gse,"getPdata"))
+
+```
+
+
+Now we get the soft data file and add aditional info to the phenodata table. Here we get that experiment is each of our samples to add this information to the table, if all are from a single experiment can skip this part
+
+```{r}
+getSOFT<-function(x){
+  g<- invisible(getGEO(x,GSEMatrix=FALSE))
+	return(g)
+}
+
+
+soft <-invisible(lapply(gse_ids,getSOFT))
+
+soft_dataframe<-data.frame()
+
+for(i in 1:length(soft)){
+	ux<-soft[[i]];	
+	samples<-ux@header$sample_id
+	geo_gse<-ux@header$geo_accession
+	df<-data.frame(samples,rep(geo_gse,length(samples)))
+	soft_dataframe<-rbind(soft_dataframe,df)	
+}
+
+colnames(soft_dataframe)<-c("X","experiment")
+rownames(soft_dataframe)<-soft_dataframe$X
+
+
+phenodata<-merge(phenodata,soft_dataframe, by="row.names")
+rownames(phenodata)<-phenodata$Row.names
+
+phenodata<-phenodata[,-which(colnames(phenodata) %in% c("Row.names","X"))]
+
+```
+
+
+In this moment a non-automatized part will start, in which we need to analyze the created table and define characteristics of our interest. This is unnecesary if the samples are of the same expermient
+
+
+
+
+
+```{r}
+# CLASIFIY THE SAMPLES BY ANY USER SELECTED CHRITERIA
+
+
+strvec<-apply(phenodata[,which(colnames(phenodata) %in% c("charc_vec","source"))] , 1 , paste , collapse = "-" );
+
+
+keywords<-c("HeLa","HaCaT","sw756","SiHa","C4-I","CaSki","C-33A","HT-3","MS751","ME-180",
+"DMSO O|Primary human neonatal foreskin keratinocytes|-Epidermal keratinocytes",
+"Normal Uterus|Normal cervix|Normal cervix epithelium|normal-normal squamous",
+"Cervical cancer, squamous cell carcinoma|carcinoma-invasive squamous cell carcinoma of the cervix|invasive squamous cell carcinoma of the cervix",
+"Cervical cancer, adenocarcinoma",
+"lesion-high grade squamous|lesion-high grade squamous",
+"Commercial RNA from normal cervix|Toral RNA, commercial-Normal cervix|commercial_BioChain");
+
+v_cell_line=rep("",length(strvec))
+#DEFINE THE CLASIFICATION OF THE SAMPLES
+groups<-list()
+for(i in 1:length(keywords)){
+	group<-grep(keywords[i],strvec, ignore.case = TRUE)
+	if(i>1){
+		for(j in 1:(i-1)){
+			group<-setdiff(group,intersect(group, unlist(groups[j])))
+		}
+	}
+	groups[i]<-list(group);
+}
+
+
+
+keywords<-c("HeLa","HaCaT","sw756","SiHa","C4-I","CaSki","C-33A","HT-3","MS751","ME-180", "keratinocytes","NormCervix","CervixCancer-SCC","CervixCancer-ACC","lesion-high","NormComercial")
+
+for(i in 1:length(keywords)){
+	list<-unlist(groups[i])
+	v_cell_line[list]<-rep(keywords[i],length(unlist(list)))
+}
+v_cell_line[v_cell_line==""]="other";
+
+phenodata$samples<-v_cell_line
+phenodata<-phenodata[-which(v_cell_line=="other"),]
+
+
+
+write.table(phenodata, file = "phenodata.tsv", append = FALSE, quote = TRUE, sep = "\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE,col.names = TRUE, qmethod = c("escape", "double"),fileEncoding = "")
+
+
+```
+
+
+
+In this case this part was done one bye one in order to interpretate the meaning of the information of each sample
+
+
+```{r}
+#USER DEFINED STATES
+
+phenodata$treatment<-c("none", "yes", "yes", "yes", "yes", "yes", "yes", "none", "none", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "none", "none", "none", "none", "yes", "yes", "yes", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "yes", "yes", "none", "yes", "none", "yes", "yes", "yes");
+
+# We remove all the samples with any treatment
+phenodata<-phenodata[which(phenodata$treatment=="none"),]
+```
+
+**IMPORTANT.**  We have to save this table in a tab separated (or coma) file. If it is easier for you, you can do the last space in Excel, Calc or similar.
+
+```{r}
+
+phenodata<-cbind(rownames(phenodata), phenodata[,c(1,3,4,7,8)])
+colnames(phenodata)[1]<-"rownames"
+
+
+write.table(phenodata, file = "phenodata_HGU133A.tsv", append = FALSE, quote = TRUE, sep = "\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"),fileEncoding = "")
+
+```
+
+
+
+In this moment we can quit R beacuse all the information we process is in the "phenodata.tsv" file and we can analize it.
+
+Remove all used files 
+
+
+
+```{r}
+list<-list.files(path="Data",pattern="*_series_matrix.txt");
+file.remove(paste("Data",list,sep="/"))
+```
+
+
+
+

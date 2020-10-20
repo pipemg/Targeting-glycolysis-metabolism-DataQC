@@ -1,0 +1,566 @@
+---
+Author: Felipe Muñoz-Gonzalez Felipe Muñoz-Gonzalez
+Date: November 10,2016
+Title: HGU133Plus2 Analysis
+---
+## An&aacute;lisis de datos de Affymetrix HGU133A-Plus2 ##
+
+### &Iacute;ndice de contenido###
+1. [Read the input phenoData](#read) 
+2. [Download and read the CEL files](#download) 
+3. [Normalize and Quality Control](#norm) 
+4. [Principal Component Analysis](#pca) 
+5. [](#) 
+6. [](#) 
+
+#### <a name="genes"> Analysis using the genes</a>###
+**Abstract:** <br>
+
+<br><br>
+**Author:** <br>Felipe de Jes&uacute;s Mu&ntilde;oz Gonz&aacute;lez <br>
+Instituto Nacional de Medicina Genomica (INMEGEN) <br>
+M&eacute;xico City, January 2016.<br>
+
+
+
+
+
+#### <a name="libraries">Load libraries</a> 
+
+```{r, message=FALSE, warnings=FALSE}
+
+if(!require(GEOquery)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('GEOquery'))
+}
+
+library(GEOquery, quietly = TRUE)
+
+# Create a list of all raw data files and assign cell lines and condition
+if(!require(affy)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('affy'))
+}
+library(affy, quietly = TRUE)
+
+
+#Preprocessing and analysis for single microarrays and microarray batches. It asumes that the distribution between each microarray will be the same
+if(!require(frma)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('frma'))
+}
+library(frma, quietly = TRUE)
+
+#This package generates microarray quality metrics reports for data in Bioconductor microarray data containers (ExpressionSet, NChannelSet, AffyBatch). One and two color array platforms are supported.
+if(!require(arrayQualityMetrics)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('arrayQualityMetrics'))
+}
+library(arrayQualityMetrics, quietly = TRUE)
+
+
+if(!require(hgu133a.db)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('hgu133a.db'))
+}
+library(hgu133a.db, quietly = TRUE)
+
+
+if(!require(genefilter)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('genefilter'))
+}
+library(genefilter, quietly = TRUE)
+
+
+if(!require(limma)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('limma'))
+}
+library(limma, quietly = TRUE)
+
+if(!require(gplots)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('gplots'))
+}
+library(gplots, quietly = TRUE)
+
+if(!require(hgu133afrmavecs)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('hgu133afrmavecs'))
+}
+library(hgu133afrmavecs, quietly = TRUE)
+```
+####  <a name="read">Read the PhenoData file</a> ####
+
+This file contains all the information about the samples of interest, the first column is the GSM ID of each sample (They are unique and the header of that column is X), the file is a tab delimiter file and contains a samples column of our interest. All the samples have to be the same platform, in this case, GPL570 (Affymetrix HG133Plus2), also a column whit the GSE id can be used to validate the bash effect of the samples.
+
+
+```{r, message=FALSE}
+phenodata<-read.csv("phenodata_HGU133A.tsv",sep="\t", header=TRUE);
+rownames(phenodata)<-phenodata$rownames;
+phenodata<-phenodata[-1];
+
+#we remove all the samples that are less than 3
+phenodata<-phenodata[-which(phenodata$samples %in% names(which(table(phenodata$samples)<3))),]
+
+if(!dir.exists("Data")){
+	dir.create("Data");
+}
+
+geoIDs<-as.character(rownames(phenodata))
+```
+
+
+#### <a name="download">Download and read the CEL files</a> ###
+
+We use the phenodata rownames to download the data files for samples that don't exist yet
+
+R code:
+```{r, message=FALSE}
+
+already_there <- dir.exists(paste0("Data/",geoIDs ))
+
+file_info <- lapply(geoIDs[!already_there], getGEOSuppFiles, baseDir="Data")
+
+celfiles <- list.files("Data/",recursive=T, pattern="CEL.gz",ignore.case=T)
+names(celfiles) <- list.files("Data/");
+raw_data <- ReadAffy(filenames=paste("Data",celfiles,sep="/"), compress=T)
+pData(raw_data) <- phenodata[,c(1,4,5)]
+
+
+```
+
+
+#### <a name="norm"> Normalize and Quality Control</a>###
+
+This part will be done as is need it, we have to ensure that all our samples pass the quality control metrics, in order to do it is necesary to remove from the celfiles variable
+
+```{r}
+
+#Remove samples that doesn't achive the quality control 
+remove<-c("GSM23372","GSM246423","GSM247662","GSM247857","GSM247655", "GSM247660","GSM247656","GSM246485","GSM247650","GSM246422","GSM247663", "GSM247654", "GSM247877", "GSM656387")
+
+
+```
+
+```{r, message=FALSE, warnings=FALSE}
+
+if(length(remove)>0){
+  raw_rm<-raw_data[,!(sampleNames(raw_data) %in% remove)] 
+  eset <- frma(raw_rm)
+}else{
+  eset <- frma(raw_data)
+}
+
+
+#if(length(remove)>0){
+#  raw_cells_rm<-raw_cells[,!(sampleNames(raw_cells) %in% remove_cells)] 
+#  eset_cells <- frma(raw_cells_rm)
+#}else{
+#  eset_cells <- frma(raw_cells)
+
+#}
+
+```
+
+```{r}
+#we get the new phenodata variable
+phenodata<-data.frame(pData(eset))
+phenodata<-droplevels(phenodata)
+pData(eset)<-phenodata
+
+#phenodata<-data.frame(pData(eset_cells))
+#phenodata<-droplevels(phenodata)
+#pData(eset_cells)<-phenodata
+#pData(eset_cells)
+#eset<-eset_cells
+```
+
+We use the arrayQualityMetrics to check the microarray quality
+
+```{r}
+#For errors in two packages httr and getGEO we have to remove it
+# use search() and detach()
+
+#We have to overwrite the function length.path
+length.path <- function(x) length(unclass(x))
+
+arrayQualityMetrics(expressionset=eset, outdir = "HGU133A_QualityMetrics",intgroup="samples", force = TRUE, do.logtransform = FALSE)
+```
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+
+phenodata<-pData(eset)
+mean_max <- findLargest(rownames(eset), rowMeans(exprs(eset)),"hgu133a")
+
+gset <- eset[mean_max, ]
+pData(gset)<-pData(eset)
+rownames(gset)<-as.character(hgu133aENTREZID)[mean_max]
+
+binary_genes<-barcode(eset)[mean_max,]
+
+colnames(binary_genes)<-pData(eset)$samples
+rownames(binary_genes)<-as.character(hgu133aENTREZID)[mean_max]
+
+SCC<-rowMeans(binary_genes[,pData(gset)$samples=="CervixCancer-SCC" ])
+NC<-rowMeans(binary_genes[,pData(gset)$samples %in% c("NormCervix")])
+LH<-rowMeans(binary_genes[,pData(gset)$samples %in% c("lesion-high")])
+
+biopsys<-data.frame(cbind(SCC,NC,LH))
+
+rownames(biopsys)<-as.character(hgu133aENTREZID)[mean_max]
+
+#entrez2HGNC<-read.table(file = "../Entrez2HGNC.txt",header = T, sep="\t")
+
+#hgnc_symbol_entrez <- entrez2HGNC[entrez2HGNC$Entrez_Gene_ID %in% as.character(rownames(biopsys)),c(1,2,5)]
+#rownames(hgnc_symbol_entrez)<-hgnc_symbol_entrez$Entrez_Gene_ID
+
+#biopsys$hgnc="0"
+#biopsys$hgnc=hgnc_symbol_entrez[as.character(rownames(biopsys)),1]
+
+#biopsys<-biopsys[!is.na(biopsys$hgnc),]
+ 
+#means<-rowMeans(biopsys[,c(1,2,3)])
+
+#biopsys<-biopsys[order(means, decreasing = T),]
+
+#biopsys<-biopsys[!duplicated(biopsys$hgnc),]
+
+#rownames(biopsys)<-biopsys$hgnc
+
+#biopsys<-biopsys[order(biopsys$hgnc),c(1,2)]
+
+write.table(biopsys, file = "Binary_biopsys_hgu133A_ENTREZ.tsv", append = FALSE, quote = TRUE, sep = "\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"),fileEncoding = "" )
+
+```
+
+```{r}
+write.table(exprs(gset), file = "Exprs_normalized_biopsys_hgu133A.tsv", append = FALSE, quote = TRUE, sep = "\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"),fileEncoding = "" )
+```
+
+
+#### <a name="pca"> Principal Component Analysis</a>###
+
+Once we have our data set that passes the Quality Control we will analize it in order to understand the important parts. 
+
+First we use the Principal Component Analysis in order to see the distribution of our samples and if them are separated as samples says. [Principal Component Analysis 4 Dummies](https://georgemdallas.wordpress.com/2013/10/30/principal-component-analysis-4-dummies-eigenvectors-eigenvalues-and-dimension-reduction/)
+
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+
+#First we define a function that stablish the max and min limits of a vector and round it
+#STABLISH THE LIMITS OF A VECTOR
+getlimits<-function(vector){
+	min=min(vector);
+	max=max(vector);
+	limit=c();
+	if(min<0){
+		limit=c(limit,round(min-.5));
+	}else{
+		limit=c(limit,round(min+.5));
+	}
+
+	if(max<0){
+		limit=c(limit,round(max-.5));
+	}else{
+		limit=c(limit,round(max+.5));
+	}
+}
+
+
+```
+
+
+***Using the Probs***
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+if(!require(ggfortify)){
+  install.packages("ggfortify")
+}
+
+library(ggfortify)
+
+#calculate the PCA
+pca = prcomp(t(exprs(eset)))
+
+#get the principal component proportion of variability of our samples
+percentil=cumsum(pca$sdev^2 / sum(pca$sdev^2))
+
+for(i in length(percentil):2){
+	percentil[i]=percentil[i]-percentil[i-1]
+}
+
+percentil=round(percentil*10000)/100
+
+
+
+#We get the sample names
+interested<-unique(phenodata$samples)
+
+#calculate the limits of the plot based in the first and second component of the PCA
+xlims=c(round(min(pca$x[,1])/100)*100, round(max(pca$x[,1])/100)*100)
+ylims=c( round(min(pca$x[,2])/100)*100, round(max(pca$x[,2])/100)*100)
+
+#get the lower and upper bounds of the plot
+xlims=getlimits(pca$x[,1])
+ylims=getlimits(pca$x[,2])
+ylims=c(ylims[1]-10,ylims[2])
+
+#Set the colors of each sample you can also select your own colors
+colors<-rainbow(length(interested))
+
+ylims
+#Plot the PCA and set the main title and labels
+par(xpd=TRUE)
+plot(NULL, main="PCA HGU133A Per Probes", xlab=paste("PCA1 = ", as.character(percentil[1]),"%"), ylab=paste("PCA2 = ", as.character(percentil[2]),"%"), xlim=xlims, ylim=ylims)
+
+for(i in 1:length(interested)){
+		datalist<-which(phenodata$samples %in% interested[i]);
+		points(pca$x[datalist,1],pca$x[datalist,2], col=colors[i], pch=20, cex = 1.5)
+}
+
+legend("bottom",inset=c(0,-0.35),legend=interested, col=colors, pch=16, bg="#FFFFFF", ncol=2,cex=.85)
+
+#save the plot in two formats svg and pdf
+dev.print(svg,"pca_per_probes.svg")
+dev.print(pdf,"pca_per_probes.pdf")
+
+
+```
+
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+
+library(ggfortify)
+
+#calculate the PCA
+pca = prcomp(t(exprs(gset)))
+
+#get the principal component proportion of variability of our samples
+percentil=cumsum(pca$sdev^2 / sum(pca$sdev^2))
+
+for(i in length(percentil):2){
+	percentil[i]=percentil[i]-percentil[i-1]
+}
+
+percentil=round(percentil*10000)/100
+
+
+#We get the sample names
+interested<-unique(phenodata$samples)
+
+#calculate the limits of the plot based in the first and second component of the PCA
+xlims=c(round(min(pca$x[,1])/100)*100, round(max(pca$x[,1])/100)*100);
+ylims=c( round(min(pca$x[,2])/100)*100, round(max(pca$x[,2])/100)*100);
+
+#get the lower and upper bounds of the plot
+xlims=getlimits(pca$x[,1]);
+ylims=getlimits(pca$x[,2]);
+ylims=c(ylims[1]-10,ylims[2])
+
+#Set the colors of each sample you can also select your own colors
+colors<-rainbow(length(interested));
+
+ylims
+#Plot the PCA and set the main title and labels
+par( xpd=TRUE)
+plot(NULL, main="PCA HGU133A Per Genes", xlab=paste("PCA1 = ", as.character(percentil[1]),"%"), ylab=paste("PCA2 = ", as.character(percentil[2]),"%"), xlim=xlims, ylim=ylims)
+
+for(i in 1:length(interested)){
+		datalist<-which(phenodata$samples %in% interested[i]);
+		points(pca$x[datalist,1],pca$x[datalist,2], col=colors[i], pch=20, cex = 1.5)
+}
+
+legend("bottom",inset=c(0,-0.35),legend=interested, col=colors, pch=16, bg="#FFFFFF", ncol=2,cex=.85)
+
+#save the plot in two formats svg and pdf
+dev.print(svg,"pca_per_genes.svg");
+dev.print(pdf,"pca_per_genes.pdf");
+
+
+```
+
+***Analisis of the results***
+
+If we compare this PCA results we can say that all the PCAs corectly most of the data except the NormalCervix Samples and the Cervical Cancer samples.
+
+We summarize the first two components in this table
+
+
+ |   Data    | First Component | Second Component | Third Component | Total of the three components|
+ | --------- |  -------------- | ---------------- | --------------- | ---------------------------- |
+ |   Probs   |      36.38%     |      12.37%      |      5.52%      |             54.27%           |
+ |   genes   |      31.50%     |      14.24%      |      6.11%      |             54.85%           |
+
+As we see the geneSet is the one that captures most of the variability in it's two first components.
+
+
+#### <a name="heatmaps"> Heatmap Plots</a>###
+ 
+
+A **heat map** is a graphical representation of data where the individual values contained in a matrix are represented as colors. Fractal maps and tree maps both often use a similar system of color-coding to represent the values taken by a variable in a hierarchy. The term is also used to mean its thematic application as a choropleth map.
+
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+
+#Fit linear model for each gene given a series of arrays
+library(limma)
+
+library(gplots)
+
+#SET THE COLORS FOR THE SAMPLES
+color.clasification.map <- function(mol.biol) { 
+	colors_clasification[which(unique(phenodata$samples)==mol.biol)]
+}
+
+
+colors_clasification<-rainbow(length(unique(phenodata$samples)))
+
+sampecolors <- unlist(lapply(phenodata$samples,"color.clasification.map"))
+```
+
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+rv = rowVars(exprs(gset))
+select = order(rv, decreasing=TRUE)#[seq_len(500)]
+
+expSetClasifications <- exprs(gset)[select,]
+
+phenodata<-pData(gset)
+
+
+heatmap.2(expSetClasifications[order(rowMeans(expSetClasifications[,phenodata$samples=="HaCaT"])),], col=redblue(75), scale="row", ColSideColors=sampecolors, main="HGU133A All Genes", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.8,labCol=NA,  dendrogram = "column",xaxt = "n", labRow=c(rep("",1000)))
+legend(.0,.5,legend=unique(phenodata$samples), col=colors_clasification, pch=15, bg="#FFFFFF", cex = .6)
+
+dev.print(svg,"heatmap_all_genes.svg");
+dev.print(pdf,"heatmap_all_genes.pdf");
+
+```
+
+Finding differentially expressed probesets
+
+Now we have a filtered dataset, we can send the information to limma for differential gene expression analysis. First of all we need to extract information about the samples:
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+samples <- as.factor(phenodata$samples)
+samples
+design <- model.matrix(~0 + samples)
+
+
+colnames(design) <-c("CervixCancerSCC","HeLa", "keratinocytes",  "lesionHigh", "NormCervix")
+design
+```
+At this point we have normalised filtered data, and a description of the data and the samples and experimental design. This can be fed into limma for analysis.
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+library(limma)
+
+#Annotating the results with associated gene symbols
+symbol_set <- eset[mean_max, ]
+pData(symbol_set)<-pData(eset)
+rownames(symbol_set)<-as.character(hgu133aSYMBOL)[mean_max]
+
+# fit the linear model to the gene set
+fit <- lmFit(exprs(symbol_set), design)
+# set up a contrast matrix to compare tissues v cell line
+contrast.matrix <- makeContrasts(Cancer_lesion= CervixCancerSCC - lesionHigh, Cancer_normal= CervixCancerSCC -  NormCervix,  lesion_normal= lesionHigh -  NormCervix, levels=design)
+# check the contrast matrix
+contrast.matrix
+
+# Now the contrast matrix is combined with the per-probeset linear model fit.
+fits <- contrasts.fit(fit, contrast.matrix)
+ebFit <- eBayes(fits)
+# return the top 30 results for any given contrast
+# coef=1 is huvec_choroid, coef=2 is huvec_retina
+topTable(ebFit, number=30, coef=1)
+
+
+```
+
+Now we create the volcano plot using this contrast models
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+
+##Complete list of genes with p-values and fold change
+##Coef=1, so we are just looking at huvec_choroid
+gene_list <- topTable(ebFit, coef=1, number=1000000, sort.by="logFC")
+
+##Highlight genes that have an absolute fold change > 2 and a padj.P.Val<0.05
+gene_list$threshold = as.factor(abs(gene_list$logFC) > 2 & gene_list$adj.P.Val < 0.05)
+```
+
+Then we used ggplot2 for volcano plots
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+require(ggplot2)
+
+g = ggplot(data=gene_list, aes(x=logFC, y=-log10(P.Value), colour=threshold)) +
+  geom_point(alpha=0.4, size=1.75) +
+  xlim(c(-10, 10)) + ylim(c(0, 15)) +
+  xlab("log2 fold change") + ylab("-log10 p-value")
+g
+```
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+rv = rowVars(exprs(symbol_set))
+select =rownames(gene_list[gene_list$threshold==TRUE,])
+
+expSetClasifications <- exprs(symbol_set)[select,]
+head(expSetClasifications)
+phenodata<-pData(symbol_set)
+
+
+
+heatmap.2(expSetClasifications, col=redblue(75), scale="row", ColSideColors=sampecolors, main="HGU133A 68 differential expressed genes", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.8,labCol=NA,  dendrogram = "column",xaxt = "n", labRow=c(rep("",1000)))
+legend(.0,.5,legend=unique(phenodata$samples), col=colors_clasification, pch=15, bg="#FFFFFF", cex = .6)
+
+dev.print(svg,"heatmap_68_differential_expressed_genes.svg")
+
+dev.print(pdf,"heatmap_68_differential_expressed_genes.pdf")
+
+```
+ 
+NOTE: the probe_id of 214532_x_at have match with POU5F1B and POU5F1(oct4/3), also POU5F1P4 and POU5F1P3. (ref)[https://genecards.weizmann.ac.il/cgi-bin/geneannot/GA_search.pl?keyword_type=probe_set_id&target=genecards&keyword=214532_x_at&array=HG-U133] / (Fasta Seq GenBank: AF268615.1)[https://www.ncbi.nlm.nih.gov/nuccore/12382248?report=fasta]
+Sensitivity = 0.818, Specificity = 0.583. 
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+
+ probs_id<-as.list(hgu133aSYMBOL)[as.list(hgu133aSYMBOL) %in% c("CDKN2A", "PARP1",  "FOXC2", "PMS1", "SOX2","PAX6", "TGFB3", "WEE1", "ZFX", "NANOG", "BRIP1", "TP63", "KLF4", "C-MYC", "POU5F1","ZFP42","TDGF1", "STAT", "POU5F1B" )]
+
+phenodata<-pData(eset)
+
+sampecolors <- unlist(lapply(phenodata$samples[phenodata$samples %in% c("NormCervix","CervixCancer-SCC")],"color.clasification.map"))
+
+
+expSetClasifications <- exprs(symbol_set)[rownames(exprs(symbol_set)) %in% c("CDKN2A", "PARP1",  "FOXC2", "PMS1", "SOX2","PAX6", "TGFB3", "WEE1", "ZFX", "NANOG", "BRIP1", "TP63", "KLF4", "C-MYC", "POU5F1","ZFP42","TDGF1", "STAT", "POU5F1B" ),phenodata$samples %in% c("NormCervix","CervixCancer-SCC")]
+
+
+heatmap.2(expSetClasifications, col=redblue(75), scale="row", ColSideColors=sampecolors, main=" ", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=1, labCol=NA,  dendrogram = "column", xaxt = "n", labRow=c(""))
+
+
+
+
+
+expSetClasifications <- exprs(symbol_set)[rownames(exprs(symbol_set)) %in% c("PARP1" ),phenodata$samples %in% c("NormCervix","CervixCancer-SCC")]
+
+
+expSetClasifications<-rbind(expSetClasifications,expSetClasifications)
+
+z<-(expSetClasifications[1,]-mean(expSetClasifications[1,]))/sd(expSetClasifications[1,])
+ord<-names(z[order(z)])
+
+
+svg("heatmap_68_differential_expressed_genes.svg")
+heatmap.2(expSetClasifications[,ord], col=redblue(75), scale="row", ColSideColors=sampecolors, main=" ", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=1, labCol=NA,  dendrogram = "non", xaxt = "n", labRow=c(""), Rowv=FALSE, Colv=FALSE)
+
+legend(.6,1,legend= c("CervixCancer-SCC","NormCervix"), col=colors_clasification, pch=15, bg="#FFFFFF", cex = .8)
+
+dev.off()
+
+```
+
+
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+print(sessionInfo())
+```

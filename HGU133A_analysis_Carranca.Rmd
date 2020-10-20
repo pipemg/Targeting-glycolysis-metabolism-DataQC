@@ -1,0 +1,462 @@
+---
+Title:  HGU133A Analysis
+Author: Felipe Muñoz-Gonzalez
+Date:   November 10,2016
+---
+## An&aacute;lisis de datos de Affymetrix HGU133A-Plus2 ##
+
+### &Iacute;ndice de contenido###
+1. [Read the input phenoData](#read) 
+2. [Download and read the CEL files](#download) 
+3. [Normalize and Quality Control](#norm) 
+4. [Principal Component Analysis](#pca) 
+5. [](#) 
+6. [](#) 
+
+#### <a name="genes"> Analysis using the genes</a>###
+**Abstract:** <br>
+
+<br><br>
+**Author:** <br>Felipe de Jes&uacute;s Mu&ntilde;oz Gonz&aacute;lez <br>
+Instituto Nacional de Medicina Genomica (INMEGEN) <br>
+M&eacute;xico City, January 2016.<br>
+
+
+
+
+
+#### <a name="libraries">Load libraries</a> 
+
+```{r, message=FALSE, warnings=FALSE}
+
+if(!require(GEOquery)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('GEOquery'))
+}
+
+library(GEOquery, quietly = TRUE)
+
+# Create a list of all raw data files and assign cell lines and condition
+if(!require(affy)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('affy'))
+}
+library(affy, quietly = TRUE)
+
+
+#Preprocessing and analysis for single microarrays and microarray batches. It asumes that the distribution between each microarray will be the same
+if(!require(frma)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('frma'))
+}
+library(frma, quietly = TRUE)
+
+#This package generates microarray quality metrics reports for data in Bioconductor microarray data containers (ExpressionSet, NChannelSet, AffyBatch). One and two color array platforms are supported.
+if(!require(arrayQualityMetrics)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('arrayQualityMetrics'))
+}
+library(arrayQualityMetrics, quietly = TRUE)
+
+
+if(!require(hgu133a.db)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('hgu133a.db'))
+}
+library(hgu133a.db, quietly = TRUE)
+
+
+if(!require(genefilter)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('genefilter'))
+}
+library(genefilter, quietly = TRUE)
+
+
+if(!require(limma)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('limma'))
+}
+library(limma, quietly = TRUE)
+
+if(!require(gplots)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('gplots'))
+}
+library(gplots, quietly = TRUE)
+
+if(!require(hgu133afrmavecs)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('hgu133afrmavecs'))
+}
+library(hgu133afrmavecs, quietly = TRUE)
+
+
+
+if(!require(annotate)){
+  source('http://bioconductor.org/biocLite.R')
+  biocLite(c('annotate'))
+}
+library(annotate, quietly = TRUE, warn.conflicts = FALSE)
+```
+####  <a name="read">Read the PhenoData file</a> ####
+
+This file contains all the information about the samples of interest, the first column is the GSM ID of each sample (They are unique and the header of that column is X), the file is a tab delimiter file and contains a samples column of our interest. All the samples have to be the same platform, in this case, GPL96 (Affymetrix HGU133A), also a column whit the GSE id can be used to validate the bash effect of the samples.
+
+
+```{r, message=FALSE}
+phenodata<-read.csv("phenodata_HGU133A.tsv",sep="\t", header=TRUE);
+rownames(phenodata)<-phenodata$rownames;
+phenodata<-phenodata[-1];
+
+#we remove all the samples that are less than 3
+phenodata<-phenodata[-which(phenodata$samples %in% names(which(table(phenodata$samples)<3))),]
+
+if(!dir.exists("Data")){
+	dir.create("Data");
+}
+
+geoIDs<-as.character(rownames(phenodata))
+```
+
+
+#### <a name="download">Download and read the CEL files</a> ###
+
+We use the phenodata rownames to download the data files for samples that don't exist yet
+
+R code:
+```{r, message=FALSE}
+
+already_there <- dir.exists(paste0("Data/",geoIDs ))
+
+file_info <- lapply(geoIDs[!already_there], getGEOSuppFiles, baseDir="Data")
+
+celfiles <- list.files("Data/",recursive=T, pattern="CEL.gz",ignore.case=T)
+names(celfiles) <- list.files("Data/");
+raw_data <- ReadAffy(filenames=paste("Data",celfiles,sep="/"), compress=T)
+pData(raw_data) <- phenodata[,c(1,4,5)]
+
+
+```
+
+
+#### <a name="norm"> Normalize and Quality Control</a>###
+
+This part will be done as is need it, we have to ensure that all our samples pass the quality control metrics, in order to do it is necesary to remove from the celfiles variable
+
+```{r}
+
+#Remove samples that doesn't achive the quality control 
+remove<-c("GSM23372","GSM23373","GSM23377","GSM23378","GSM246423","GSM247662","GSM247857","GSM247655", "GSM156764", "GSM246123", "GSM159933", "GSM159934","GSM217619", "GSM217627", "GSM247660", "GSM247656","GSM246485","GSM247650","GSM246422","GSM247663", "GSM247654", "GSM247877", "GSM656387", "GSM156764")
+
+
+if(length(remove)>0){
+  raw_rm<-raw_data[,!(sampleNames(raw_data) %in% remove)] 
+  eset <- frma(raw_rm)
+}else{
+  eset <- frma(raw_data)
+}
+
+#we get the new phenodata variable
+phenodata<-data.frame(pData(eset))
+phenodata<-droplevels(phenodata)
+pData(eset)<-phenodata
+
+
+#We have to overwrite the function length.path (conflict packages error )
+length.path <- function(x) length(unclass(x))
+
+arrayQualityMetrics(expressionset=eset, outdir = "HGU133A_QualityMetrics",intgroup="samples", force = TRUE, do.logtransform = FALSE)
+
+```
+
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+
+annodb <- "hgu133a.db"
+ID     <- featureNames(eset)
+Symbol <- as.character(lookUp(ID, annodb, "SYMBOL"))
+Name   <- as.character(lookUp(ID, annodb, "GENENAME"))
+Entrez <- as.character(lookUp(ID, annodb, "ENTREZID"))
+
+names_df<-data.frame(id=ID, symbol=Symbol, name=Name, entrez=Entrez)
+
+
+phenodata<-pData(eset)
+mean_max <- findLargest(rownames(eset), rowMeans(exprs(eset)),"hgu133a")
+
+gset <- eset[mean_max, ]
+pData(gset)<-pData(eset)
+rownames(gset)<-as.character(hgu133aENTREZID)[mean_max]
+
+
+```
+
+```{r}
+write.table(exprs(eset), file = "Exprs_normalized_hgu133A.tsv", append = FALSE, quote = TRUE, sep = "\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"),fileEncoding = "" )
+```
+
+
+
+#### <a name="heatmaps"> Heatmap Plots</a>###
+ 
+
+A **heat map** is a graphical representation of data where the individual values contained in a matrix are represented as colors. Fractal maps and tree maps both often use a similar system of color-coding to represent the values taken by a variable in a hierarchy. The term is also used to mean its thematic application as a choropleth map.
+
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+
+#Fit linear model for each gene given a series of arrays
+library(limma)
+
+library(gplots)
+
+#SET THE COLORS FOR THE SAMPLES
+color.clasification.map <- function(mol.biol) { 
+	colors_clasification[which(unique(phenodata$samples)==mol.biol)]
+}
+
+colors_clasification<-rainbow(length(unique(phenodata$samples)))
+
+sampecolors <- unlist(lapply(phenodata$samples,"color.clasification.map"))
+```
+
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+rv = rowVars(exprs(gset))
+select = order(rv, decreasing=TRUE)#[seq_len(500)]
+
+expSetClasifications <- exprs(gset)[select,]
+
+phenodata<-pData(gset)
+
+pdf(file="heatmap_all_genes.pdf")
+heatmap.2(expSetClasifications, col=redblue(75), scale="row", ColSideColors=sampecolors, main="HGU133A All Genes", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.8,labCol=NA,  dendrogram = "column",xaxt = "n", labRow=c(rep("",1000)))
+legend(.0,.5,legend=unique(phenodata$samples), col=colors_clasification, pch=15, bg="#FFFFFF", cex = .6)
+dev.off()
+
+```
+
+
+
+
+```{r}
+
+
+##Biopsys
+
+subset<-exprs(eset)[,phenodata$samples %in% c("lesion-high","CervixCancer-SCC","CervixCancer-ACC","NormCervix")]
+
+f <- factor(unlist(phenodata$samples[phenodata$samples %in% c("lesion-high","CervixCancer-SCC","CervixCancer-ACC","NormCervix")]))
+design <- model.matrix(~f)
+
+fit <- eBayes(lmFit(subset,design))
+
+difExpresedClasifications  <- p.adjust(fit$p.value[, 2]) <0.05
+exprSet<-exprs(gset)[,phenodata$samples %in% c("lesion-high","CervixCancer-SCC","CervixCancer-ACC","NormCervix")]
+
+colors_clasification<-rainbow(length(unique(phenodata$samples[phenodata$samples %in% c("lesion-high","CervixCancer-ACC","CervixCancer-SCC", "NormCervix")])))
+sampecolors <- unlist(lapply(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix")], function(mol.biol){colors_clasification[which(unique(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix")])==mol.biol)]}))
+
+svg("heatmap_biopsys.svg")
+heatmap.2(subset, col=redgreen(75), scale="row", ColSideColors=sampecolors, main="Biopsys_hgu133A", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.9, labCol=NA, labRow=NA, dendrogram = "column",xaxt = "n")
+dev.off()
+
+svg("colors_biopsys.svg")
+plot(0,0, cex=0 ,xlab="",ylab="", bty="n",xaxt = "n", yaxt = "n")
+legend("top",legend=unique(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix")]), col=colors_clasification, lty=c(1,1), bg="#FFFFFF", cex = 1.2);
+dev.off();
+
+# POU5F1 == OCT4
+# POU5F1B == Oct4-pg4
+# POU1F1, POU2AF1, POU2F1, POU2F1, POU2F1, POU2F1, POU2F2, POU2F2, POU2F2, POU2F2, POU2F2, POU2F2, POU2F2, POU2F3, POU2F3, POU3F1, POU3F1, POU3F2, POU3F2, POU3F3, POU3F3, POU3F3, POU3F4, POU4F1, POU4F1, POU4F2, POU4F3, POU5F1B, POU5F1P3, POU5F1P4, POU5F2, POU6F1, POU6F1, POU6F1, POU6F1, POU6F2, POU6F2-AS2
+#C-MYC == MYC
+#KRT7 = CK7
+
+list=c("NANOG", "POU5F1", "POU5F1B", "SOX2", "KLF4", "MYC",  "FOXC2" ,"PMS1", "TGFB3", "PAX6", "PARP1", "ZFX", "BRIP1", "WEE1", "CDKN2A", "TP63", "STAT3", "MMP7", "AGR2", "GDA" ,"CD63", "KRT7");
+
+experiments=names(table(phenodata$experiment))[table(phenodata$experiment)>3]
+
+names_ids<-names_df[names_df$symbol %in% list,]
+
+for(i in 1:length(list)){
+  ids<-names_ids$id[names_ids$symbol == list[i]]
+  
+  colors_clasification<-rainbow(length(unique(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix")])))
+  sampecolors <- unlist(lapply(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix")], function(mol.biol){colors_clasification[which(unique(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix")])==mol.biol)]}))
+    
+   if(length(ids)>1){
+        
+     png(paste0("heatmap_biopsys_",list[i],".png",sep=""))
+     data<- exprs(eset[ids,phenodata$samples %in% c("CervixCancer-SCC", "CervixCancer-ACC", "NormCervix")])
+    
+     heatmap.2(data,  col=redgreen(75), scale="row",Rowv=TRUE, ColSideColors=sampecolors, main="Biopsys_hgu133A", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.9, labCol=NA, labRow=NA, dendrogram = "none",xaxt = "n")
+    
+     dev.off()
+        
+ }
+      
+ if(length(ids)==1){
+        
+    png(paste0("heatmap_biopsys_",list[i],".png",sep=""))
+    data<-rbind(exprs(eset[ids,phenodata$samples %in% c("CervixCancer-SCC","CervixCancer-ACC","NormCervix")]),exprs(eset[ids,phenodata$samples %in% c("CervixCancer-SCC","CervixCancer-ACC", "NormCervix")]))
+     heatmap.2(data, col=redgreen(75), scale="row",Rowv=TRUE, ColSideColors=sampecolors, main="Biopsys_hgu133A", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.9, labCol=NA, labRow=NA, dendrogram = "none",xaxt = "n")
+    
+     dev.off()
+        
+        
+  }
+
+  
+}
+
+
+
+
+
+for(i in 1:length(list)){
+  ids<-names_ids$id[names_ids$symbol == list[i]]
+  
+  for(j in 1:length(experiments)){
+      colors_clasification<-rainbow(length(unique(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix") & phenodata$experiment==experiments[j]])))
+      sampecolors <- unlist(lapply(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix") & phenodata$experiment==experiments[j]], function(mol.biol){colors_clasification[which(unique(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix") & phenodata$experiment==experiments[j] ])==mol.biol)]}))
+    
+       if(length(ids)>1){
+        
+        png(paste0("heatmap_biopsys_",experiments[j],"_",list[i],".png",sep=""))
+        data<- exprs(eset[ids,phenodata$samples %in% c("CervixCancer-SCC", "CervixCancer-ACC", "NormCervix") & phenodata$experiment==experiments[j]])
+    
+        heatmap.2(data,  col=redgreen(75), scale="row",Rowv=TRUE, ColSideColors=sampecolors, main="Biopsys_hgu133A", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.9, labCol=NA, labRow=NA, dendrogram = "none",xaxt = "n")
+    
+        dev.off()
+        
+      }
+      
+      if(length(ids)==1){
+        
+        png(paste0("heatmap_biopsys_",experiments[j],"_",list[i],".png",sep=""))
+        data<-rbind(exprs(eset[ids,phenodata$samples %in% c("CervixCancer-SCC","CervixCancer-ACC","NormCervix") & phenodata$experiment==experiments[j]]),exprs(eset[ids,phenodata$samples %in% c("CervixCancer-SCC","CervixCancer-ACC", "NormCervix") & phenodata$experiment==experiments[j]]))
+        heatmap.2(data, col=redgreen(75), scale="row",Rowv=TRUE, ColSideColors=sampecolors, main="Biopsys_hgu133A", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.9, labCol=NA, labRow=NA, dendrogram = "none",xaxt = "n")
+    
+        dev.off()
+        
+        
+      }
+        
+  }
+  
+
+
+  
+}
+  
+
+
+
+
+
+png(paste0("heatmap_9750_",".png",sep=""))
+data<- exprs(eset[names_ids$id,phenodata$samples %in% c("CervixCancer-SCC", "CervixCancer-ACC", "NormCervix") & phenodata$experiment=="GSE9750"])
+heatmap.2(data,  col=redgreen(75), scale="row",Rowv=FALSE, ColSideColors=sampecolors, main="Biopsys_hgu133A", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.9, labCol=NA, labRow=NA, dendrogram = "none",xaxt = "n")
+dev.off()
+        
+
+
+colors_clasification<-c("blue", "red")
+sampecolors <- unlist(lapply(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix") & phenodata$experiment=="GSE9750"], function(mol.biol){colors_clasification[which(unique(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix") & phenodata$experiment=="GSE9750"])==mol.biol)]}))
+
+#HEATMAP POR GENES
+svg(paste0("heatmap_GSE9750_",".svg",sep=""))
+data<- exprs(gset[unique(names_ids$entrez),phenodata$samples %in% c("CervixCancer-SCC", "CervixCancer-ACC", "NormCervix")])
+rownames(data)<-unique(names_ids[,c("symbol","entrez")])[unique(names_ids[,c("symbol","entrez")])$entrez %in% rownames(data),c("symbol")]
+heatmap.2(data,col=redgreen(75), scale="row",Rowv=TRUE, ColSideColors=sampecolors, main="Biopsys_hgu133A", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.9,  labCol=NA, dendrogram = "column", xaxt = "n")
+dev.off()
+        
+        
+
+
+
+colors_clasification<-c("blue", "red")
+sampecolors <- unlist(lapply(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix") & phenodata$experiment=="GSE7803"], function(mol.biol){colors_clasification[which(unique(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix") & phenodata$experiment=="GSE7803"])==mol.biol)]}))
+
+#HEATMAP POR GENES
+svg(paste0("heatmap_GSE7803_",".svg",sep=""))
+data<- exprs(gset[unique(names_ids$entrez),phenodata$samples %in% c("CervixCancer-SCC", "CervixCancer-ACC", "NormCervix") & phenodata$experiment=="GSE7803"])
+rownames(data)<-unique(names_ids[,c("symbol","entrez")])[unique(names_ids[,c("symbol","entrez")])$entrez %in% rownames(data),c("symbol")]
+heatmap.2(data,col=redgreen(75), scale="row",Rowv=TRUE, ColSideColors=sampecolors, main="Biopsys_hgu133A", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.9,  labCol=NA, dendrogram = "column", xaxt = "n")
+dev.off()
+        
+
+
+
+
+
+        
+png("colors_biopsys.png")
+plot(0,0, cex=0 ,xlab="",ylab="", bty="n",xaxt = "n", yaxt = "n")
+legend("top",legend=unique(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix")]), col=colors_clasification, lty=c(1,1), bg="#FFFFFF", cex = 1.2);
+dev.off()
+
+
+#MAX PROBE
+
+
+for(i in 1:length(list)){
+  ids<-names_ids$entrez[names_ids$symbol == list[i]]
+  
+  
+  if(length(ids)==1){
+    
+    png(paste0("heatmap_biopsys_maxProbe_",list[i],".png",sep=""))
+    data<-rbind(exprs(gset[ids,phenodata$samples %in% c("CervixCancer-SCC","CervixCancer-ACC","NormCervix")]),exprs(gset[ids,phenodata$samples %in% c("CervixCancer-SCC","CervixCancer-ACC", "NormCervix")]))
+    heatmap.2(data, col=redgreen(75), scale="row",Rowv=FALSE, ColSideColors=sampecolors, main="Biopsys_hgu133A", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.9, labCol=NA, labRow=NA, dendrogram = "none",xaxt = "n")
+
+    dev.off()
+    
+    
+  }
+}
+  
+  
+
+
+list=c("NANOG", "POU5F1", "POU5F1B", "SOX2", "KLF4", "MYC",  "FOXC2" ,"PMS1", "TGFB3", "PAX6", "PARP1", "ZFX", "BRIP1", "WEE1", "CDKN2A", "TP63", "STAT3", "MMP7", "AGR2", "GDA" ,"CD63", "KRT7");
+
+names_ids<-names_df[names_df$symbol %in% list,]
+
+colors_clasification<-rainbow(length(unique(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix")])))
+sampecolors <- unlist(lapply(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix")], function(mol.biol){colors_clasification[which(unique(phenodata$samples[phenodata$samples %in% c("CervixCancer-ACC","CervixCancer-SCC", "NormCervix")])==mol.biol)]}))
+
+for(i in 1:length(list)){
+  ids<-names_ids$id[names_ids$symbol == list[i]]
+  if(length(ids)>1){
+    
+    png(paste0("heatmap_biopsys_",list[i],".png",sep=""))
+    data<- exprs(eset[ids,phenodata$samples %in% c("CervixCancer-SCC", "CervixCancer-ACC", "NormCervix")])
+
+    heatmap.2(data,  col=redgreen(75), scale="row",Rowv=FALSE, ColSideColors=sampecolors, main="Biopsys_hgu133A", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.9, labCol=NA, labRow=NA, dendrogram = "none",xaxt = "n")
+
+    dev.off()
+    
+  }
+  
+  if(length(ids)==1){
+    
+    png(paste0("heatmap_biopsys_",list[i],".png",sep=""))
+    data<-rbind(exprs(eset[ids,phenodata$samples %in% c("CervixCancer-SCC","CervixCancer-ACC","NormCervix")]),exprs(eset[ids,phenodata$samples %in% c("CervixCancer-SCC","CervixCancer-ACC", "NormCervix")]))
+    heatmap.2(data, col=redgreen(75), scale="row",Rowv=FALSE, ColSideColors=sampecolors, main="Biopsys_hgu133A", key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.9, labCol=NA, labRow=NA, dendrogram = "none",xaxt = "n")
+
+    dev.off()
+    
+    
+  }
+}
+  
+  
+```
+
+
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+print(sessionInfo())
+```
